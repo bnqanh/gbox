@@ -38,3 +38,12 @@
     font-style: normal;
     font-display: fallback;
 }
+
+@font-face {
+    font-family: 'pnt';
+    src: url('../fonts/ProximaNova-Thin.woff') format('woff2'),
+        url('../fonts/ProximaNova-Thin.woff2') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: fallback;
+}

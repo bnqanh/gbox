@@ -16,18 +16,45 @@
     <meta property="og:title" content="Welcome to GBOX Studios" />
     <meta property="og:description"
         content="GBOX STUDIOS aim is to create a full service offering clients the highest quality of work with a comprehensive understanding of modern production, our services include advertising, products, automotive, portraits, beauty, editorial photography and video production. Gbox brand mark was inspired by the brand name and the lens – a visual representation of our world, we aim to create powerful simplicity, all components are coherence based on a box. Gbox is based in Ho Chi Minh City, one of the most beautiful city in Vietnam." />
-    <meta property="og:url" content="" />
-    <meta property="og:site_name" content="" />
-    <meta property="og:image" content="" />
+    <meta property="og:url" content="https://bnqanh.github.io/gbox/" />
+    <meta property="og:site_name" content="GBOX STUDIOS" />
+    <meta property="og:image" content="https://bnqanh.github.io/gbox/img/meta_img.jpg" />
+    <meta property="og:image:width" content="1440" />
+    <meta property="og:image:height" content="800" />
 
-    <link rel="stylesheet" href="../dest/style.min.css">
-    <link rel="stylesheet" href="../dest/fonts.css">
+    <link rel="stylesheet" href="dest/style.min.css">
+    <link rel="stylesheet" href="dest/fonts.css">
 </head>
 
 
 <body class="homepage">
+    <div class="overlay" id="overlay"></div>
     <!-- HEADER -->
-    <header></header>
+    <header class="header">
+        <div class="header__top" id="header-top">
+            <div class="header__top-container container">
+                <div class="burger-btn" id="burger-btn"><span></span></div>
+                <a href="./" class="logo">
+                    <img src="./img/logo_header.png" alt="gbox logo">
+                </a>
+                <a href="#" class="facebook">
+                    <img src="./img/icon_facebook_header.png" alt="facebook icon">
+                </a>
+            </div>
+        </div>
+        <div class="header__nav" id="header-nav">
+            <nav class="nav container --border-bottom">
+                <ul class="nav__menu">
+                    <li class="nav__menu-item left"><a href="about.html" data="about">about</a></li>
+                    <li class="nav__menu-item"><a href="studio.html" data="studio">studio</a></li>
+                    <li class="nav__menu-item"><a href="rental.html" data="rental">rental</a></li>
+                    <li class="nav__menu-item"><a href="cafe.html" data="cafe">cafe</a></li>
+                    <li class="nav__menu-item"><a href="work.html" data="work">work</a></li>
+                    <li class="nav__menu-item right"><a href="contact.html" data="contact">contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
     <!-- MAIN -->
     <main class="mainwrapper">
@@ -36,9 +63,8 @@
 
     <!-- FOOTER -->
     <footer></footer>
-
-    <script type="text/javascript" src="dest/jsmain.min.js"></script>
-    <script type="text/javascript" src="dest/main.js"></script>
+    <script type="text/javascript" src="js/libs/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="dest/dist/main.min.js"></script>
 
 </body>
 

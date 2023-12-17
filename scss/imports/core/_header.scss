@@ -1,1 +1,139 @@
 // css header
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: var(--z-fixed);
+    --height-top: 7.2rem;
+
+    &__top {
+        height: var(--height-top);
+        background-color: $header-top;
+        &-container {
+            position: relative;
+            height: 100%;
+            img {
+                @include midimg(100%);
+            }
+            .logo {
+                @include mid;
+                width: 4.3rem;
+                padding-top: 4.3rem;
+                overflow: hidden;
+            }
+            .facebook {
+                position: absolute;
+                top: 50%;
+                right: 0;
+                width: 0.9rem;
+                padding-top: 1.9rem;
+                margin-right: 0.6rem;
+                overflow: hidden;
+                @include transform(translateY(-50%));
+            }
+            .burger-btn {
+                position: absolute;
+                top: 50%;
+                left: 0;
+                width: 2.2rem;
+                height: 1.6rem;
+                margin-left: 1rem;
+                cursor: pointer;
+                @include transform(translateY(-50%));
+                @include visible(0);
+                span,
+                &::before,
+                &::after {
+                    content: "";
+                    position: absolute;
+                    width: 100%;
+                    height: 2px;
+                    background-color: $yellow;
+                    box-shadow: 2px 2px 1px 0px rgba(0, 0, 0, 0.35);
+                    -webkit-box-shadow: 2px 2px 1px 0px rgba(0, 0, 0, 0.35);
+                    -moz-box-shadow: 2px 2px 1px 0px rgba(0, 0, 0, 0.35);
+                    @include transition($t $cubic);
+                }
+                span {
+                    @include mid;
+                }
+                &::before {
+                    top: 0;
+                    left: 0;
+                }
+                &::after {
+                    bottom: 0;
+                    left: 0;
+                }
+                &.active {
+                    span {
+                        @include transform(scale(0));
+                        @include transition($t $cubic);
+                    }
+                    &::before,
+                    &::after {
+                        @include mid;
+                        @include transform-origin(center center);
+                        box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.35);
+                        -webkit-box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.35);
+                        -moz-box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.35);
+                        @include transition($t $cubic);
+                    }
+                    &::before {
+                        @include transform(translate(-50%, -50%) rotate(225deg));
+                    }
+                    &::after {
+                        @include transform(translate(-50%, -50%) rotate(-225deg));
+                    }
+                }
+                &::selection {
+                    background-color: transparent;
+                }
+                * {
+                    &::selection {
+                        background-color: transparent;
+                    }
+                }
+            }
+        }
+    }
+    &__nav {
+        height: calc(var(--height-header) - var(--height-top));
+        padding-top: 1.8rem;
+    }
+    @include sm {
+        --height-top: 6rem;
+        &__top {
+            &-container {
+                .facebook {
+                    margin-right: 2rem;
+                }
+                .burger-btn {
+                    @include visible(1);
+                }
+            }
+        }
+        &__nav {
+            @include fullscreen(true);
+            width: 50%;
+            padding-top: 0;
+            margin-top: var(--height-top);
+            background-color: $yellow;
+            @include visible(0);
+            @include transform(scaleX(0));
+            @include transform-origin(left center);
+            @include transition($t $cubic);
+            &.active {
+                @include visible(1);
+                @include transform(scaleX(1));
+                @include transition($t $cubic);
+            }
+        }
+    }
+    @include xxs {
+        &__nav {
+            width: 100%;
+        }
+    }
+}

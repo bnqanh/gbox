@@ -1,0 +1,1 @@
+{"version":3,"sources":["_nav.scss"],"names":[],"mappings":"AAAA,WACE,QAAS","file":"_nav.min.css","sourcesContent":[".nav{\r\n    &__menu{\r\n        display: flex;\r\n        \r\n        &-item{\r\n            &.left{\r\n\r\n            }\r\n            &.right{\r\n\r\n            }\r\n        }\r\n    }\r\n}"]}

@@ -1,1 +1,70 @@
-// css navigator (Menu)
+.nav {
+    position: relative;
+    height: 100%;
+    @include mid(true);
+    &__menu {
+        @include mid(true);
+        gap: 6rem;
+        &-item {
+            a {
+                position: relative;
+                @include text(1.2rem, pnsb, 3rem, $main-text, uppercase);
+                letter-spacing: 0;
+                &::before {
+                    content: attr(data);
+                    position: absolute;
+                    width: 100%;
+                    font-weight: bold;
+                    color: transparent;
+                    background: $gradient;
+                    background-clip: text;
+                    @include visible(0);
+                    @include transition($t $cubic);
+                }
+                &:hover {
+                    &::before {
+                        @include visible(1);
+                        @include transition($t $cubic);
+                    }
+                }
+            }
+            &.left,
+            &.right {
+                position: absolute;
+                top: 50%;
+                @include transform(translateY(-50%));
+            }
+            &.left {
+                left: 0;
+            }
+            &.right {
+                right: 0;
+            }
+        }
+    }
+    @include sm {
+        display: block;
+        &__menu {
+            flex-direction: column;
+            gap: 3rem;
+            padding: 3.6rem 1.5rem;
+
+            &-item {
+                &.left,
+                &.right {
+                    position: initial;
+                    @include transform(translateY(0));
+                }
+                a {
+                    @include text(3rem, pnt, 3rem, $main-text, uppercase);
+                    letter-spacing: 0.8px;
+                }
+            }
+        }
+    }
+    @include xxs {
+        &__menu {
+            align-items: initial;
+        }
+    }
+}

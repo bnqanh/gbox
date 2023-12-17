@@ -467,6 +467,8 @@ template {
   --h4-lh: 3.2rem;
   --gap: 3rem;
   --height-header: 14rem;
+  --z-fixed: 100;
+  --z-tooltip: 10;
 }
 
 @-ms-viewport {
@@ -2639,6 +2641,51 @@ a {
 
 /*# sourceMappingURL=bootstrap-grid.css.map */
 /* Navigation, header, footer*/
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: var(--z-fixed);
+}
+
+.header__top {
+  width: 100%;
+  height: 7.2rem;
+  background-color: #525355;
+}
+
+.header__top-logo {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  position: absolute;
+  width: 4.3rem;
+  padding-top: 4.3rem;
+  overflow: hidden;
+}
+
+.header__top-logo .logo {
+  max-width: 100%;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  position: absolute;
+}
+
 /* Pages */
 
 /*# sourceMappingURL=style.css.map */

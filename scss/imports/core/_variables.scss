@@ -30,8 +30,8 @@ $main-text: #171717;
 $hide-text: #898989;
 $black-line: #000000;
 $btn-bg: #231f20;
-$gradient-cl: linear-gradient(180deg, #df1cff 0%, #814bf6 50.55%, #00bcff 100%);
-
+//$gradient-cl: linear-gradient(180deg, #df1cff 0%, #814bf6 50.55%, #00bcff 100%);
+$gradient: linear-gradient(90deg, #000000 0%, #ffde00 50%, #898989 100%);
 // timing transition - tuỳ chỉnh
 $t: 0.4s;
 $cubic: cubic-bezier(0.84, 0.13, 0.33, 0.97);
@@ -60,6 +60,8 @@ $cubic: cubic-bezier(0.84, 0.13, 0.33, 0.97);
     --gap: 3rem; // gap này sử dụng cho gap cột & padding của container, container-fluid
 
     --height-header: 14rem;
+    --z-fixed: 100;
+    --z-tooltip: 10;
 
     @media (max-width: $sm-max) {
         // Tablet

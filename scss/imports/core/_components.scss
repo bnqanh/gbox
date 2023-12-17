@@ -26,4 +26,18 @@ a {
 .--blue-cl {
     color: $blue-cl;
 }
-
+//border
+.--border-bottom {
+    border-bottom: 1px solid $black-line;
+}
+.overlay {
+    @include fullscreen(true);
+    background: rgba(0, 0, 0, 0.75);
+    z-index: var(--z-fixed);
+    @include visible(0);
+    @include transition($cubic $t);
+    &.active {
+        @include visible(1);
+        @include transition($cubic $t);
+    }
+}
