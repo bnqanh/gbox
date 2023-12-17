@@ -1,0 +1,70 @@
+//======================================================BOXED LAYOUT=======================================================
+
+$container-max-width: 100%;
+$container-width: 101rem; // tùy thuộc vào container của bản thiết kế // $container-width = container (đo từ bản thiết kế) + 30px
+
+/*GRID - media queries breakpoints*/
+$xxs-min: 36em; //576px; // CÓ THỂ TÙY CHỈNH
+$xs-min: 48em; //768px; // KHÔNG THAY ĐỔI
+$sm-min: 62em; //992px; // KHÔNG THAY ĐỔI
+$md-min: 75em; //1200px; // KHÔNG THAY ĐỔI
+$lg-min: 100em; //1600px; // CÓ THỂ TÙY CHỈNH
+
+$xxs-max: ($xxs-min - 0.001); // Small Mobile
+$xs-max: ($xs-min - 0.001); // Mobile
+$sm-max: ($sm-min - 0.001); // Tablet
+$md-max: ($md-min - 0.001); // Desktop
+$lg-max: ($lg-min - 0.001); // Large Desktop
+
+//=====================================CÁC BIẾN KHÔNG THAY ĐỔI GIÁ TRỊ KHI RESPONSIVE======================================
+// colors - tuỳ chỉnh
+$white-cl: #fff;
+$black-cl: #000;
+$red-cl: #d81f1f;
+$blue-cl: #00afab;
+$header-top: #525355;
+$yellow: #ffde00;
+$main-bg: #f4f4f4;
+$footer-bg: #ffde00;
+$main-text: #171717;
+$hide-text: #898989;
+$black-line: #000000;
+$btn-bg: #231f20;
+$gradient-cl: linear-gradient(180deg, #df1cff 0%, #814bf6 50.55%, #00bcff 100%);
+
+// timing transition - tuỳ chỉnh
+$t: 0.4s;
+$cubic: cubic-bezier(0.84, 0.13, 0.33, 0.97);
+
+// ========================================CÁC BIẾN CÓ THAY ĐỔI GIÁ TRỊ KHI RESPONSIVE=====================================
+
+:root {
+    //=========== VÍ DỤ ============//
+
+    // font-size & line-height heading
+
+    --h1-fs: 7.2rem;
+    --h1-lh: 8rem;
+
+    --h2-fs: 5.2rem;
+    --h2-lh: 6rem;
+
+    --h3-fs: 3.2rem;
+    --h3-lh: 4.2rem;
+
+    --h4-fs: 2.4rem;
+    --h4-lh: 3.2rem;
+
+    // Genaral Variable
+
+    --gap: 3rem; // gap này sử dụng cho gap cột & padding của container, container-fluid
+
+    --height-header: 14rem;
+
+    @media (max-width: $sm-max) {
+        // Tablet
+    }
+    @media (max-width: $xs-max) {
+        // Mobile
+    }
+}
