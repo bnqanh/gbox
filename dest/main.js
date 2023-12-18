@@ -13,16 +13,12 @@ $(document).ready(function () {
     // show scroll menu
     $(window).scroll(() => {
         var header = $('#header');
-        if (header && mediaQuery) {
-            if (pageYOffset > 70) {
-                header.addClass('--scroll')
-                $('#header-menu').removeClass("--active")
-                $('.overlay').removeClass('active')
-            }
-            else
-                header.removeClass('--scroll')
-
+        if (pageYOffset > 70) {
+            header.addClass('--scroll')
+            $('.overlay').removeClass('active')
         }
+        else
+            header.removeClass('scroll')
 
     })
     // scroll up

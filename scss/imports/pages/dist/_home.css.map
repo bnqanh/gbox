@@ -1,0 +1,1 @@
+{"version":3,"names":[],"mappings":"","sources":["_home.scss"],"sourcesContent":[".home {\r\n    padding-top: var(--height-header);\r\n    &__welcome {\r\n        padding-block: 5.6rem 5.4rem;\r\n        &-title{\r\n            \r\n        }\r\n    }\r\n}\r\n"],"file":"_home.css"}
