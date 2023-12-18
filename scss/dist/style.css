@@ -591,12 +591,20 @@ a {
   border-bottom: 1px solid var(--color);
 }
 
-.--border-bottom.--light {
+.--border-bottom.--yellow {
   --color: #fbdb01;
+}
+
+.text-center {
+  text-align: center !important;
 }
 
 .d-grid {
   display: grid !important;
+}
+
+.justify-items-center {
+  justify-items: center !important;
 }
 
 .overlay {
@@ -626,6 +634,10 @@ a {
   -o-transition: cubic-bezier(0.84, 0.13, 0.33, 0.97) 0.4s;
 }
 
+.welcome {
+  padding-block: 5.4rem;
+}
+
 .welcome__title {
   font-size: 2rem;
   font-family: pnb;
@@ -653,6 +665,24 @@ a {
   color: #171717;
   text-transform: none;
   letter-spacing: -0.4px;
+}
+
+.welcome.--bottom-line {
+  --color: #000000;
+  position: relative;
+}
+
+.welcome.--bottom-line::after {
+  position: absolute;
+  bottom: 0;
+  content: "";
+  width: 32rem;
+  height: 1px;
+  background-color: var(--color);
+}
+
+.welcome.--bottom-line.--yellow {
+  --color: #fbdb01;
 }
 
 .col-1,
@@ -3065,8 +3095,6 @@ a {
 
 .home__welcome {
   width: 100%;
-  text-align: center;
-  padding-block: 5.6rem 5.4rem;
 }
 
 .home__welcome-title {
