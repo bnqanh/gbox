@@ -86,3 +86,70 @@ a {
         }
     }
 }
+.allworks {
+    padding-block: 4rem;
+    &__tabs {
+        @include mid(true);
+        gap: 4rem;
+        &-item {
+            a {
+                @include text(1.2rem, pnsb, 3rem, $hide-text, uppercase);
+                letter-spacing: 0;
+            }
+            &.active {
+                a {
+                    color: $main-text;
+                }
+            }
+        }
+    }
+    &__content {
+        &-panel {
+            margin-left: -1rem !important;
+            margin-right: -1rem !important;
+            .item {
+                padding-left: 1rem;
+                padding-right: 1rem;
+                margin-bottom: 3.6rem;
+            }
+        }
+    }
+}
+.card {
+    &__img {
+        display: block;
+        position: relative;
+        width: 100%;
+        aspect-ratio: 313/190;
+        overflow: hidden;
+        margin-block: 1rem;
+        img {
+            @include midimg(100%);
+        }
+    }
+    &__content {
+        text-align: center;
+        padding-block: 1.8rem;
+        &-title {
+            position: relative;
+            @include text(1.2rem, pnb, 3rem, $main-text, uppercase);
+            letter-spacing: 0;
+            padding-bottom: 0.6rem;
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: 0.3rem;
+                @include transform(translateX(-50%));
+                width: 1.6rem;
+                height: 3px;
+                background-color: $yellow;
+            }
+        }
+        &-c,
+        &-p,
+        &-d {
+            @include text(1.2rem, pnr, 2rem, $main-text, none);
+            letter-spacing: 0;
+        }
+    }
+}

@@ -6,7 +6,9 @@
     width: 100%;
     z-index: var(--z-fixed);
     --height-top: 7.2rem;
-
+    .container {
+        height: 100%;
+    }
     &__top {
         height: var(--height-top);
         background-color: $header-top;
@@ -101,6 +103,7 @@
     &__nav {
         height: calc(var(--height-header) - var(--height-top));
         padding-top: 1.8rem;
+        background-color: $main-bg;
     }
     @include sm {
         --height-top: 6rem;
