@@ -32,14 +32,16 @@ body {
     }
     .container {
         width: 100%;
-        padding-right: calc(var(--gap) / 2);
-        padding-left: calc(var(--gap) / 2);
+        padding-right: 0;
+        padding-left: 0;
         margin-right: auto;
         margin-left: auto;
     }
 
     @media (min-width: $xxs-min) {
         .container {
+            padding-right: calc(var(--gap) / 2);
+            padding-left: calc(var(--gap) / 2);
             max-width: 54rem;
         }
     }

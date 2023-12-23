@@ -1,5 +1,77 @@
 "use strict";
 
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+(function ($) {
+  'use strict';
+
+  $.fn.loadMoreResults = function (options) {
+    var defaults = {
+      tag: {
+        name: 'div',
+        'class': 'item'
+      },
+      displayedItems: 6,
+      showItems: 6,
+      button: {
+        'class': 'load__more'
+      }
+    };
+    var opts = $.extend(true, {}, defaults, options);
+    var alphaNumRE = /^[A-Za-z][-_A-Za-z0-9]+$/;
+    var numRE = /^[0-9]+$/;
+    $.each(opts, function validateOptions(key, val) {
+      if (key === 'tag') {
+        formatCheck(key, val, 'name', 'string');
+        formatCheck(key, val, 'class', 'string');
+      }
+
+      if (key === 'displayedItems') {
+        formatCheck(key, val, null, 'number');
+      }
+
+      if (key === 'showItems') {
+        formatCheck(key, val, null, 'number');
+      }
+
+      if (key === 'button') {
+        formatCheck(key, val, 'class', 'string');
+      }
+    });
+
+    function formatCheck(key, val, prop, typ) {
+      if (prop !== null && _typeof(prop) !== 'object') {
+        if (_typeof(val[prop]) !== typ || String(val[prop]).match(typ == 'string' ? alphaNumRE : numRE) === null) {
+          opts[key][prop] = defaults[key][prop];
+        }
+      } else {
+        if (_typeof(val) !== typ || String(val).match(typ == 'string' ? alphaNumRE : numRE) === null) {
+          opts[key] = defaults[key];
+        }
+      }
+    }
+
+    ;
+    return this.each(function (index, element) {
+      var $list = $(element),
+          lc = $list.find(' > ' + opts.tag.name + '.' + opts.tag["class"]).length,
+          dc = parseInt(opts.displayedItems),
+          sc = parseInt(opts.showItems);
+      $list.find(' > ' + opts.tag.name + '.' + opts.tag["class"] + ':lt(' + dc + ')').css("display", "inline-block");
+      $list.find(' > ' + opts.tag.name + '.' + opts.tag["class"] + ':gt(' + (dc - 1) + ')').css("display", "none");
+      $list.on("click", "." + opts.button["class"], function (e) {
+        e.preventDefault();
+        dc = dc + sc <= lc ? dc + sc : lc;
+        $list.find(' > ' + opts.tag.name + '.' + opts.tag["class"] + ':lt(' + dc + ')').fadeIn();
+
+        if (dc == lc) {
+          $(this).hide();
+        }
+      });
+    });
+  };
+})(jQuery);
+
 $(document).ready(function () {
   //show mobi menu
   $('#burger-btn').click(function () {
@@ -22,7 +94,9 @@ $(document).ready(function () {
     } else header.removeClass('scroll');
   }); // run all works tabs function
 
-  allworksTabs(); // scroll up
+  allworksTabs(); // run load more in works tabs
+
+  load_more_responsive($('.allworks__content-panel'), 'load__more'); // scroll up
 
   $(window).scroll(function () {
     var scrollTop = $('#scroll-top');
@@ -55,5 +129,34 @@ function allworksTabs() {
       $(panel).fadeIn(400);
     });
   });
+} // load more works function
+
+
+function load_more_responsive(element, btn_class) {
+  if (matchMedia("(min-width: 48em)").matches) {
+    element.loadMoreResults({
+      tag: {
+        name: 'div',
+        'class': 'item'
+      },
+      displayedItems: 6,
+      showItems: 6,
+      button: {
+        'class': btn_class
+      }
+    });
+  } else {
+    element.loadMoreResults({
+      tag: {
+        name: 'div',
+        'class': 'item'
+      },
+      displayedItems: 3,
+      showItems: 3,
+      button: {
+        'class': btn_class
+      }
+    });
+  }
 }
 //# sourceMappingURL=main.dev.js.map

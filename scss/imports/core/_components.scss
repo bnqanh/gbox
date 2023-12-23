@@ -105,8 +105,10 @@ a {
     }
     &__content {
         &-panel {
+            position: relative;
             margin-left: -1rem !important;
             margin-right: -1rem !important;
+            padding-bottom: 6rem;
             .item {
                 padding-left: 1rem;
                 padding-right: 1rem;
@@ -122,19 +124,19 @@ a {
         width: 100%;
         aspect-ratio: 313/190;
         overflow: hidden;
-        margin-block: 1rem;
+        margin-block: 1.2rem;
         img {
             @include midimg(100%);
         }
     }
     &__content {
         text-align: center;
-        padding-block: 1.8rem;
+        padding-block: 1.9rem;
         &-title {
             position: relative;
             @include text(1.2rem, pnb, 3rem, $main-text, uppercase);
             letter-spacing: 0;
-            padding-bottom: 0.6rem;
+            padding-bottom: 0.7rem;
             &::after {
                 content: "";
                 position: absolute;
@@ -150,6 +152,49 @@ a {
         &-d {
             @include text(1.2rem, pnr, 2rem, $main-text, none);
             letter-spacing: 0;
+        }
+    }
+}
+.load__more {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    @include transform(translateX(-50%));
+    @include text(1.2rem, pnsb, 3rem, $main-text, uppercase);
+    letter-spacing: 0;
+    cursor: pointer;
+    padding-bottom: 1.8rem;
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        @include transform(translateX(-50%));
+        width: 1.5rem;
+        height: 0.9rem;
+        background-image: url(../img/v_down.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        @include animation(v_down $t $cubic infinite alternate);
+        @include keyframes(v_down) {
+            0% {
+                @include transform(translate(-50%, 0%));
+            }
+            20% {
+                @include transform(translate(-50%, -10%));
+            }
+            40% {
+                @include transform(translate(-50%, -20%));
+            }
+            60% {
+                @include transform(translate(-50%, -30%));
+            }
+            80% {
+                @include transform(translate(-50%, -40%));
+            }
+            100% {
+                @include transform(translate(-50%, -50%));
+            }
         }
     }
 }
