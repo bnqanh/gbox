@@ -98,7 +98,8 @@ $(document).ready(function () {
     allworksTabs();
     // run load more in works tabs
 
-    load_more_responsive($('.allworks__content-panel'), 'load__more')
+    load_more_responsive($('.home .allworks__content-panel'), 'load__more', 6, 6, 3);
+    load_more_responsive($('.work .allworks__content-panel'), 'load__more', 9, 6, 5)
     // scroll up
     $(window).scroll(() => {
         var scrollTop = $('#scroll-top')
@@ -142,16 +143,34 @@ function allworksTabs() {
     });
 }
 // load more works function
-function load_more_responsive(element, btn_class) {
-    if (matchMedia("(min-width: 48em)").matches) {
+function load_more_responsive(element, btn_class, count1, count2, count3) {
+    var md = parseInt(count1),
+        sm = parseInt(count2),
+        xs = parseInt(count3)
+    if (matchMedia("(min-width: 75em)").matches) {
         element.loadMoreResults(
             {
                 tag: {
                     name: 'div',
                     'class': 'item'
                 },
-                displayedItems: 6,
-                showItems: 6,
+                displayedItems: md,
+                showItems: md,
+                button: {
+                    'class': btn_class,
+                }
+            }
+        );
+    }
+    else if (matchMedia("(min-width: 48em)").matches) {
+        element.loadMoreResults(
+            {
+                tag: {
+                    name: 'div',
+                    'class': 'item'
+                },
+                displayedItems: sm,
+                showItems: sm,
                 button: {
                     'class': btn_class,
                 }
@@ -165,8 +184,8 @@ function load_more_responsive(element, btn_class) {
                     name: 'div',
                     'class': 'item'
                 },
-                displayedItems: 3,
-                showItems: 3,
+                displayedItems: xs,
+                showItems: xs,
                 button: {
                     'class': btn_class,
                 }

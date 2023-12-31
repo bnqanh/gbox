@@ -14,4 +14,10 @@
   --z-tooltip: 10;
 }
 
+@media (max-width: 61.999em) {
+  :root {
+    --height-header: 6rem;
+  }
+}
+
 /*# sourceMappingURL=_variables.css.map */

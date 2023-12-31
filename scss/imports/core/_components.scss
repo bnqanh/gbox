@@ -87,6 +87,7 @@ a {
     }
 }
 .allworks {
+    position: relative;
     padding-block: 4rem;
     &__tabs {
         @include mid(true);
@@ -116,6 +117,35 @@ a {
             }
         }
     }
+    &__booking {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        display: grid;
+        grid-template-columns: repeat(2, 10rem);
+        column-gap: 2rem;
+        &-text {
+            @include text(1.4rem, pnr, 2rem, #2d2e2e, none);
+            letter-spacing: 0;
+            text-align: right;
+        }
+        &-logo {
+            @include mid(true);
+            flex-direction: column;
+            width: 10rem;
+            height: 10rem;
+            overflow: hidden;
+            background-color: #525355;
+            border-radius: 1rem;
+            @include text(2.4rem, pneb, 3rem, $yellow, uppercase);
+            letter-spacing: -0.4px;
+            margin-top: 4px;
+            cursor: pointer;
+            .now {
+                font-size: 2.7rem;
+            }
+        }
+    }
 }
 .card {
     &__img {
@@ -133,10 +163,11 @@ a {
         text-align: center;
         padding-block: 1.9rem;
         &-title {
+            display: block;
             position: relative;
             @include text(1.2rem, pnb, 3rem, $main-text, uppercase);
             letter-spacing: 0;
-            padding-bottom: 0.7rem;
+            padding-bottom: 0.4rem;
             &::after {
                 content: "";
                 position: absolute;
@@ -152,6 +183,27 @@ a {
         &-d {
             @include text(1.2rem, pnr, 2rem, $main-text, none);
             letter-spacing: 0;
+        }
+    }
+    @include sm {
+        &__img {
+            aspect-ratio: 320/190;
+            margin-block: 0;
+        }
+        &__content {
+            padding-block: 2.9rem;
+            &-title {
+                padding-bottom: 2.6rem;
+                &::after {
+                    bottom: 1.3rem;
+                }
+            }
+            &-title,
+            &-c,
+            &-p,
+            &-d {
+                font-size: 1.4rem;
+            }
         }
     }
 }

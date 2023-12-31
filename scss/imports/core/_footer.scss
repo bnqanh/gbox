@@ -27,10 +27,12 @@
             .list {
                 display: grid;
                 gap: 3rem;
-                max-width: 24rem;
                 &__item {
-                    display: flex;
-                    flex-flow: row wrap;
+                    display: grid;
+                    &.--tel {
+                        display: flex;
+                        gap: 3.6rem;
+                    }
                 }
             }
         }
@@ -157,12 +159,13 @@
         }
     }
     @include sm {
-        height: 24rem;
+        height: 24.5rem;
         .container {
             @include transform(translateY(-26rem));
         }
         &__wrapper {
             display: block;
+            padding-bottom: 7.8rem;
             &-right {
                 display: none;
             }
@@ -174,16 +177,18 @@
                 padding-left: 0;
                 padding-right: 0;
                 .list {
-                    justify-items: center;
                     gap: 0;
-                    max-width: 100%;
                     text-align: center;
                     &__item {
-                        display: block;
-                        max-width: 22rem;
+                        &.--tel {
+                            justify-content: center;
+                        }
                     }
                 }
             }
+        }
+        &__bottom {
+            padding-block: 3.2rem;
         }
     }
 }

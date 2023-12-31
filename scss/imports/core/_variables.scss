@@ -66,6 +66,7 @@ $cubic: cubic-bezier(0.84, 0.13, 0.33, 0.97);
 
     @media (max-width: $sm-max) {
         // Tablet
+        --height-header: 6rem;
     }
     @media (max-width: $xs-max) {
         // Mobile
