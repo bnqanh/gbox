@@ -250,3 +250,32 @@ a {
         }
     }
 }
+.buttons {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    justify-content: flex-end;
+    @include text(1.6rem, pnr, 3rem, $yellow, capitalize);
+    letter-spacing: 0;
+    &__item {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        cursor: pointer;
+        &-icon {
+            width: 1.2rem;
+            height: 3rem;
+            g {
+                fill: $yellow;
+            }
+            pointer-events: none;
+        }
+        &-text {
+            font-size: 1.2rem;
+            pointer-events: none;
+        }
+        ::selection {
+            background-color: transparent;
+        }
+    }
+}

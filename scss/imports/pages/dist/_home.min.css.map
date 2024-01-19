@@ -1,1 +1,1 @@
-{"version":3,"sources":["_home.scss"],"names":[],"mappings":"AAAA,MACE,YAAa,qBAGf,eACE,cAAe,OAAO","file":"_home.min.css","sourcesContent":[".home {\r\n    padding-top: var(--height-header);\r\n    &__welcome {\r\n        padding-block: 5.6rem 5.4rem;\r\n        &-title{\r\n            \r\n        }\r\n    }\r\n}\r\n"]}
+{"version":3,"sources":[],"names":[],"mappings":"","file":"_home.min.css","sourcesContent":[]}

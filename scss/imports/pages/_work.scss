@@ -1,32 +1,34 @@
-.work {
-    padding-block: var(--height-header) 26.5rem;
-    .allworks {
-        padding-block: 6.2rem;
-    }
-    @include sm {
-        padding-block: var(--height-header) 29rem;
+.workpage {
+    .work {
+        padding-block: var(--height-header) 26.5rem;
         .allworks {
-            padding-block: 0;
-            &__tabs {
-                padding-block: 4rem;
-            }
-            &__content {
-                &-panel {
-                    padding-bottom: 28.7rem;
-                    .item {
-                        margin-bottom: 1.5rem;
+            padding-block: 6.2rem;
+        }
+        @include sm {
+            padding-block: var(--height-header) 29rem;
+            .allworks {
+                padding-block: 0;
+                &__tabs {
+                    padding-block: 4rem;
+                }
+                &__content {
+                    &-panel {
+                        padding-bottom: 28.7rem;
+                        .item {
+                            margin-bottom: 1.5rem;
+                        }
                     }
                 }
-            }
-            &__booking {
-                display: flex;
-                flex-direction: column;
-                max-width: 10rem;
-                bottom: 10.7rem;
-                right: 50%;
-                @include transform(translateX(50%));
-                &-text {
-                    text-align: center;
+                &__booking {
+                    display: flex;
+                    flex-direction: column;
+                    max-width: 10rem;
+                    bottom: 10.7rem;
+                    right: 50%;
+                    @include transform(translateX(50%));
+                    &-text {
+                        text-align: center;
+                    }
                 }
             }
         }

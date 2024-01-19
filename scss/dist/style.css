@@ -695,6 +695,7 @@ a {
 }
 
 .allworks {
+  position: relative;
   padding-block: 4rem;
 }
 
@@ -729,6 +730,49 @@ a {
   padding-left: 1rem;
   padding-right: 1rem;
   margin-bottom: 3.6rem;
+}
+
+.allworks__booking {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 10rem);
+  column-gap: 2rem;
+}
+
+.allworks__booking-text {
+  font-size: 1.4rem;
+  font-family: pnr;
+  line-height: 2rem;
+  color: #2d2e2e;
+  text-transform: none;
+  letter-spacing: 0;
+  text-align: right;
+}
+
+.allworks__booking-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 10rem;
+  height: 10rem;
+  overflow: hidden;
+  background-color: #525355;
+  border-radius: 1rem;
+  font-size: 2.4rem;
+  font-family: pneb;
+  line-height: 3rem;
+  color: #ffde00;
+  text-transform: uppercase;
+  letter-spacing: -0.4px;
+  margin-top: 4px;
+  cursor: pointer;
+}
+
+.allworks__booking-logo .now {
+  font-size: 2.7rem;
 }
 
 .card__img {
@@ -3791,96 +3835,161 @@ a {
 }
 
 /* Pages */
-.home {
+.homepage .home {
   padding-block: var(--height-header) 22rem;
 }
 
-.home__welcome {
+.homepage .home__welcome {
   width: 100%;
 }
 
-.home__welcome-title {
+.homepage .home__welcome-title {
   max-width: fit-content;
   background-color: #ffde00;
 }
 
-.home__welcome-desc {
+.homepage .home__welcome-desc {
   max-width: 74rem;
 }
 
 @media screen and (max-width: 61.999em) {
-  .home {
+  .homepage .home {
     padding-block: var(--height-header) 30rem;
   }
-  .home__welcome {
+  .homepage .home__welcome {
     padding-block: 3.5rem 2.3rem;
   }
-  .home__welcome-title {
+  .homepage .home__welcome-title {
     margin-bottom: 0;
   }
-  .home__welcome-desc, .home__welcome::after {
+  .homepage .home__welcome-desc, .homepage .home__welcome::after {
     display: none;
   }
-  .home .allworks {
+  .homepage .home .allworks {
     padding-block: 0;
   }
-  .home .allworks__tabs {
+  .homepage .home .allworks__tabs {
     display: none;
   }
-  .home .allworks__content-panel {
+  .homepage .home .allworks__content-panel {
     padding-bottom: 7rem;
   }
-  .home .allworks__content-panel .item {
+  .homepage .home .allworks__content-panel .item {
     margin-bottom: 1.5rem;
   }
-  .home .allworks__content-panel:not(:first-child) {
+  .homepage .home .allworks__content-panel:not(:first-child) {
     display: none;
   }
 }
 
-.work {
-  padding-block: var(--height-header) 22rem;
+.workpage .work {
+  padding-block: var(--height-header) 26.5rem;
 }
 
-.work__welcome {
+.workpage .work .allworks {
+  padding-block: 6.2rem;
+}
+
+@media screen and (max-width: 61.999em) {
+  .workpage .work {
+    padding-block: var(--height-header) 29rem;
+  }
+  .workpage .work .allworks {
+    padding-block: 0;
+  }
+  .workpage .work .allworks__tabs {
+    padding-block: 4rem;
+  }
+  .workpage .work .allworks__content-panel {
+    padding-bottom: 28.7rem;
+  }
+  .workpage .work .allworks__content-panel .item {
+    margin-bottom: 1.5rem;
+  }
+  .workpage .work .allworks__booking {
+    display: flex;
+    flex-direction: column;
+    max-width: 10rem;
+    bottom: 10.7rem;
+    right: 50%;
+    transform: translateX(50%);
+    -webkit-transform: translateX(50%);
+    -moz-transform: translateX(50%);
+    -ms-transform: translateX(50%);
+    -o-transform: translateX(50%);
+  }
+  .workpage .work .allworks__booking-text {
+    text-align: center;
+  }
+}
+
+.cafepage .cafe {
+  position: relative;
+  padding-block: var(--height-header) 1.7rem;
+}
+
+.cafepage .cafe__background {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+}
+
+.cafepage .cafe__background-img {
+  max-width: 100%;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  position: absolute;
+}
+
+.cafepage .cafe__welcome {
   width: 100%;
 }
 
-.work__welcome-title {
-  max-width: fit-content;
-  background-color: #ffde00;
+.cafepage .cafe__welcome-subtitle, .cafepage .cafe__welcome-title {
+  color: #fbdb01;
 }
 
-.work__welcome-desc {
+.cafepage .cafe__welcome-title {
+  max-width: fit-content;
+  background-color: transparent;
+}
+
+.cafepage .cafe__welcome-desc {
+  color: #ebebeb;
   max-width: 74rem;
 }
 
+.cafepage .cafe__subtitle {
+  font-size: 1.4rem;
+  font-family: pnl;
+  line-height: 2.2rem;
+  color: #eaeae7;
+  text-transform: uppercase;
+  letter-spacing: 0.32rem;
+}
+
 @media screen and (max-width: 61.999em) {
-  .work {
+  .cafepage .cafe {
     padding-block: var(--height-header) 30rem;
   }
-  .work__welcome {
+  .cafepage .cafe__welcome {
     padding-block: 3.5rem 2.3rem;
   }
-  .work__welcome-title {
+  .cafepage .cafe__welcome-title {
     margin-bottom: 0;
   }
-  .work__welcome-desc, .work__welcome::after {
-    display: none;
-  }
-  .work .allworks {
-    padding-block: 0;
-  }
-  .work .allworks__tabs {
-    display: none;
-  }
-  .work .allworks__content-panel {
-    padding-bottom: 7rem;
-  }
-  .work .allworks__content-panel .item {
-    margin-bottom: 1.5rem;
-  }
-  .work .allworks__content-panel:not(:first-child) {
+  .cafepage .cafe__welcome-desc, .cafepage .cafe__welcome::after {
     display: none;
   }
 }
