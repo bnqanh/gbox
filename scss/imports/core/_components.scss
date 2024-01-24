@@ -331,6 +331,11 @@ a {
         }
         &.--back{
             gap: 1rem;
+            &:hover {
+                .btn__icon {
+                    @include transform(translateX(-50%));
+                }
+            }
         }
     }
 }
