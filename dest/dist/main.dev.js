@@ -102,6 +102,35 @@ $(document).ready(function () {
   $(window).scroll(function () {
     var scrollTop = $('#scroll-top');
     if (scrollTop) pageYOffset > window.innerHeight ? scrollTop.addClass('show') : scrollTop.removeClass('show');
+  }); //fancybox
+  //click fullscreen button
+
+  $('.btn.--fullscreen').on('click', function () {
+    if (matchMedia("(min-width: 48em)").matches) Fancybox.fromNodes($('[data-fancybox="details"]'), {
+      placeFocusBack: false,
+      idle: false,
+      compact: false,
+      dragToClose: false,
+      showClass: 'f-fadeIn',
+      hideClass: 'f-fadeOut',
+      Thumbs: {
+        type: 'classic'
+      }
+    });
+  }); //click slide studio details, project details
+
+  $('.item.f-carousel__slide').on('click', function () {
+    if (matchMedia("(max-width: 47.999em)").matches) Fancybox.fromNodes($('[data-fancybox="details"]'), {
+      placeFocusBack: false,
+      idle: false,
+      compact: false,
+      dragToClose: false,
+      showClass: 'f-fadeIn',
+      hideClass: 'f-fadeOut',
+      Thumbs: {
+        type: 'classic'
+      }
+    });
   });
 }); // all works Tabs function
 

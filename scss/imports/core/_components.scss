@@ -279,3 +279,58 @@ a {
         }
     }
 }
+.btn {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    &__text {
+        @include text(1.2rem, pnr, 3rem, $main-text, none);
+        letter-spacing: 0;
+        @include transform(scaleX(1));
+        @include transition(transform $t $cubic);
+    }
+    &.--fullscreen {
+        gap: 2rem;
+        .btn__icon {
+            width: 1.6rem;
+            height: 1.6rem;
+            @include transform(scale(1));
+            @include transition(transform $t $cubic);
+        }
+        &:hover {
+            .btn__icon {
+                @include transform(scale(1.4));
+                @include transition(transform $t $cubic);
+            }
+        }
+    }
+    &.--back {
+        gap: 3rem;
+        .btn__icon {
+            width: 1rem;
+            height: 1.6rem;
+            @include transition(transform $t $cubic);
+        }
+        &:hover {
+            .btn__icon {
+                @include transform(translateX(-100%));
+                @include transition(transform $t $cubic);
+            }
+        }
+    }
+    &:hover {
+        .btn__text {
+            font-weight: bold;
+            @include transform(scaleX(1.125));
+            @include transition(transform $t $cubic);
+        }
+    }
+    @include sm{
+        &.--fullscreen{
+            display: none;
+        }
+        &.--back{
+            gap: 1rem;
+        }
+    }
+}
