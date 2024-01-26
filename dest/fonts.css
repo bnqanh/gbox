@@ -1,7 +1,14 @@
 /* FONT FACE - font-display: fallback; */
 
 /* VÍ DỤ - tuỳ chỉnh theo từng dự án*/
-
+@font-face {
+    font-family: 'dinb';
+    src: url('../fonts/DINCondensed-Bold.woff2') format('woff2'),
+        url('../fonts/DINCondensed-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: fallback;
+}
 
 @font-face {
     font-family: 'pnsb';
@@ -26,6 +33,15 @@
     src: url('../fonts/ProximaNova-Bold.woff2') format('woff2'),
         url('../fonts/ProximaNova-Bold.woff') format('woff');
     font-weight: bold;
+    font-style: normal;
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: 'pnsb';
+    src: url('../fonts/ProximaNova-SemiBold.woff2') format('woff2'),
+        url('../fonts/ProximaNova-SemiBold.woff') format('woff');
+    font-weight: 600;
     font-style: normal;
     font-display: fallback;
 }

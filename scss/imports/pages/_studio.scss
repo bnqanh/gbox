@@ -1,0 +1,209 @@
+.studiopage {
+    .studio {
+        padding-block: var(--height-header) 21.4rem;
+        &__grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            row-gap: 7rem;
+            column-gap: 2rem;
+            margin-block: 7.4rem;
+            &-item {
+                .image {
+                    display: block;
+                    position: relative;
+                    width: 100%;
+                    aspect-ratio: 480/300;
+                    overflow: hidden;
+                    img {
+                        @include midimg(100%);
+                        @include transition(transform $t $cubic);
+                    }
+                    &::before {
+                        content: "";
+                        background-color: rgba($black-cl, 0.6);
+                        @include fullscreen();
+                        @include visible(1);
+                        @include transition($t $cubic);
+                        z-index: 1;
+                    }
+                }
+                .content {
+                    position: relative;
+                    display: flex;
+                    gap: 8rem;
+                    background-color: transparent;
+                    @include transition($t $cubic);
+                    &__title {
+                        display: grid;
+                        place-items: center;
+                        width: 12rem;
+                        letter-spacing: 0;
+                        background-color: $yellow;
+                        padding-block: 2.2rem;
+                        &-text {
+                            @include text(1.1rem, pnr, 2rem, $main-text, uppercase);
+                        }
+                        &-number {
+                            @include text(6.1rem, dinb, 5.5rem, $main-text, uppercase);
+                        }
+                    }
+                    &__desc {
+                        @include text(1.2rem, pnr, 2rem, $main-text, none);
+                        letter-spacing: 0;
+                        margin-top: 2.8rem;
+                        @include transition($t $cubic);
+                        &-label {
+                            line-height: 3rem;
+                            text-transform: uppercase;
+                        }
+                        &-param {
+                            margin-top: 0.4rem;
+                        }
+                    }
+                    &__btn {
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        display: flex;
+                        flex-direction: column;
+                        place-items: center;
+                        gap: 1rem;
+                        margin: 2.8rem 3rem;
+                        &-text {
+                            @include text(1.2rem, pnsb, 3rem, $main-text, uppercase);
+                            letter-spacing: 0;
+                            @include transition($t $cubic);
+                        }
+                        &-icon {
+                            width: 1.6rem;
+                            height: 1rem;
+                            g {
+                                fill: $gray-arrow;
+                                @include transition($t $cubic);
+                            }
+                        }
+                    }
+                }
+                &:hover {
+                    .image {
+                        img {
+                            @include transform(translate(-50%, -50%) scale(1.125));
+                            @include transition(transform $t $cubic);
+                        }
+                        &::before {
+                            @include visible(0);
+                            @include transition($t $cubic);
+                        }
+                    }
+                    .content {
+                        background-color: $header-top;
+                        @include transition($t $cubic);
+                        &__desc {
+                            color: $light-text2;
+                            @include transition($t $cubic);
+                        }
+                        &__btn {
+                            &-text {
+                                color: $light-text2;
+                                @include transition($t $cubic);
+                            }
+                            &-icon {
+                                g {
+                                    fill: $yellow;
+                                    @include transition($t $cubic);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        @include sm {
+            padding-block: var(--height-header) 29.6rem;
+            &__grid {
+                display: flex;
+                flex-direction: column;
+                gap: 4rem;
+                margin-block: 3rem;
+            }
+        }
+        @include xxs {
+            &__grid {
+                margin-left: 1rem;
+                margin-right: 1rem;
+                &-item {
+                    .image {
+                        aspect-ratio: 300/187;
+                    }
+                    .content {
+                        gap: 2.5rem;
+                        &__title {
+                            width: 7.5rem;
+                            padding-block: 1.2rem 1rem;
+                            &-text {
+                                font-size: 1.2rem;
+                                line-height: 1.25rem;
+                            }
+                            &-number {
+                                font-size: 3.85rem;
+                                line-height: 4rem;
+                            }
+                        }
+                        &__desc {
+                            line-height: 1.8rem;
+                            margin-top: 1.2rem;
+                            margin-bottom: -0.4rem;
+                            &-label {
+                                line-height: 2rem;
+                            }
+                            &-param {
+                                margin-top: 1rem;
+                            }
+                        }
+                        &__btn {
+                            margin: 2rem 0;
+                            &-text {
+                                display: none;
+                            }
+                            &-icon {
+                                @include transform(rotate(-90deg));
+                            }
+                        }
+                    }
+                    &:hover {
+                        .image {
+                            img {
+                                @include transform(translate(-50%, -50%) scale(1.125));
+                                @include transition(transform $t $cubic);
+                            }
+                            &::before {
+                                @include visible(0);
+                                @include transition($t $cubic);
+                            }
+                        }
+                        .content {
+                            background-color: $header-top;
+                            @include transition($t $cubic);
+                            &__desc {
+                                color: $light-text2;
+                                @include transition($t $cubic);
+                            }
+                            &__btn {
+                                &-text {
+                                    color: $light-text2;
+                                    @include transition($t $cubic);
+                                }
+                                &-icon {
+                                    g {
+                                        fill: $yellow;
+                                        @include transition($t $cubic);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
