@@ -129,22 +129,6 @@ a {
             letter-spacing: 0;
             text-align: right;
         }
-        &-logo {
-            @include mid(true);
-            flex-direction: column;
-            width: 10rem;
-            height: 10rem;
-            overflow: hidden;
-            background-color: #525355;
-            border-radius: 1rem;
-            @include text(2.4rem, pneb, 3rem, $yellow, uppercase);
-            letter-spacing: -0.4px;
-            margin-top: 4px;
-            cursor: pointer;
-            .now {
-                font-size: 2.7rem;
-            }
-        }
     }
 }
 .card {
@@ -251,22 +235,25 @@ a {
     }
 }
 .buttons {
+    --color: #ffde00;
     display: flex;
     align-items: center;
     gap: 2rem;
     justify-content: flex-end;
-    @include text(1.6rem, pnr, 3rem, $yellow, capitalize);
+    @include text(1.6rem, pnr, 3rem, var(--color), capitalize);
     letter-spacing: 0;
     &__item {
         display: flex;
         align-items: center;
         gap: 2rem;
         cursor: pointer;
+        @include transform(scaleX(1));
+        @include transition(transform $t $cubic);
         &-icon {
             width: 1.2rem;
             height: 3rem;
             g {
-                fill: $yellow;
+                fill: var(--color);
             }
             pointer-events: none;
         }
@@ -277,6 +264,22 @@ a {
         ::selection {
             background-color: transparent;
         }
+        &:hover {
+            @include transform(scaleX(1.125));
+            @include transition(transform $t $cubic);
+        }
+        &.is-prev {
+            @include transform-origin(right center);
+        }
+        &.is-next {
+            @include transform-origin(left center);
+        }
+    }
+    &.--black {
+        --color: #171717;
+    }
+    &.--light{
+        --color: #f5f5f5;
     }
 }
 .btn {
@@ -289,17 +292,37 @@ a {
         @include transform(scaleX(1));
         @include transition(transform $t $cubic);
     }
+    &.--plan {
+        gap: 1rem;
+        .btn__icon {
+            @include transform(translateX(0) scale(1));
+        }
+        &:hover {
+            .btn__icon {
+                @include transform(translateX(50%) scale(1.25));
+            }
+        }
+    }
     &.--fullscreen {
         gap: 2rem;
         .btn__icon {
+            @include transform(scale(1));
+        }
+        &:hover {
+            .btn__icon {
+                @include transform(scale(1.25));
+            }
+        }
+    }
+    &.--plan,
+    &.--fullscreen {
+        .btn__icon {
             width: 1.6rem;
             height: 1.6rem;
-            @include transform(scale(1));
             @include transition(transform $t $cubic);
         }
         &:hover {
             .btn__icon {
-                @include transform(scale(1.4));
                 @include transition(transform $t $cubic);
             }
         }
@@ -325,11 +348,12 @@ a {
             @include transition(transform $t $cubic);
         }
     }
-    @include sm{
-        &.--fullscreen{
+    @include sm {
+        &.--fullscreen,
+        &.--plan {
             display: none;
         }
-        &.--back{
+        &.--back {
             gap: 1rem;
             &:hover {
                 .btn__icon {
@@ -337,5 +361,48 @@ a {
                 }
             }
         }
+    }
+}
+.square {
+    display: grid;
+    place-items: center;
+    width: 12rem;
+    aspect-ratio: 1/1;
+    letter-spacing: 0;
+    background-color: $yellow;
+    padding-block: 2.2rem;
+    &__text {
+        @include text(1.1rem, pnr, 2rem, $main-text, uppercase);
+    }
+    &__number {
+        @include text(6.1rem, dinb, 5.5rem, $main-text, uppercase);
+    }
+    @include xxs {
+        width: 7.5rem;
+        padding-block: 1.2rem 1rem;
+        &__text {
+            font-size: 1.2rem;
+            line-height: 1.25rem;
+        }
+        &__number {
+            font-size: 3.85rem;
+            line-height: 4rem;
+        }
+    }
+}
+.booking_button {
+    @include mid(true);
+    flex-direction: column;
+    width: 10rem;
+    height: 10rem;
+    overflow: hidden;
+    background-color: #525355;
+    border-radius: 1rem;
+    @include text(2.4rem, pneb, 3rem, $yellow, uppercase);
+    letter-spacing: -0.4px;
+    margin-top: 4px;
+    cursor: pointer;
+    .now {
+        font-size: 2.7rem;
     }
 }

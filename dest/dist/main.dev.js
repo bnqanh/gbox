@@ -106,7 +106,7 @@ $(document).ready(function () {
   //click fullscreen button
 
   $('.btn.--fullscreen').on('click', function () {
-    if (matchMedia("(min-width: 48em)").matches) Fancybox.fromNodes($('[data-fancybox="details"]'), {
+    if (matchMedia("(min-width: 62em)").matches) Fancybox.fromNodes($('[data-fancybox="details"]'), {
       placeFocusBack: false,
       idle: false,
       compact: false,
@@ -120,7 +120,7 @@ $(document).ready(function () {
   }); //click slide studio details, project details
 
   $('.item.f-carousel__slide').on('click', function () {
-    if (matchMedia("(max-width: 47.999em)").matches) Fancybox.fromNodes($('[data-fancybox="details"]'), {
+    if (matchMedia("(max-width: 61.999em)").matches) Fancybox.fromNodes($('[data-fancybox="details"]'), {
       placeFocusBack: false,
       idle: false,
       compact: false,

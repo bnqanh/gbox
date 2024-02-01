@@ -109,7 +109,7 @@ $(document).ready(function () {
     //fancybox
     //click fullscreen button
     $('.btn.--fullscreen').on('click', function () {
-        if (matchMedia("(min-width: 48em)").matches)
+        if (matchMedia("(min-width: 62em)").matches)
         Fancybox.fromNodes($('[data-fancybox="details"]'), {
                 placeFocusBack: false,
                 idle: false,
@@ -124,7 +124,7 @@ $(document).ready(function () {
     })
     //click slide studio details, project details
     $('.item.f-carousel__slide').on('click', function () {
-        if (matchMedia("(max-width: 47.999em)").matches)
+        if (matchMedia("(max-width: 61.999em)").matches)
             Fancybox.fromNodes($('[data-fancybox="details"]'), {
                 placeFocusBack: false,
                 idle: false,
