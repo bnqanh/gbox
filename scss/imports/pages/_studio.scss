@@ -6,7 +6,7 @@
             grid-template-columns: repeat(2, 1fr);
             row-gap: 7rem;
             column-gap: 2rem;
-            margin-block: 7.4rem;
+            margin: 7.4rem 0;
             &-item {
                 .image {
                     display: block;
@@ -110,13 +110,7 @@
                 display: flex;
                 flex-direction: column;
                 gap: 4rem;
-                margin-block: 3rem;
-            }
-        }
-        @include xxs {
-            &__grid {
-                margin-left: 1rem;
-                margin-right: 1rem;
+                margin: 3rem 1rem;
                 &-item {
                     .image {
                         aspect-ratio: 300/187;
@@ -141,38 +135,6 @@
                             }
                             &-icon {
                                 @include transform(rotate(-90deg));
-                            }
-                        }
-                    }
-                    &:hover {
-                        .image {
-                            img {
-                                @include transform(translate(-50%, -50%) scale(1.125));
-                                @include transition(transform $t $cubic);
-                            }
-                            &::before {
-                                @include visible(0);
-                                @include transition($t $cubic);
-                            }
-                        }
-                        .content {
-                            background-color: $header-top;
-                            @include transition($t $cubic);
-                            &__desc {
-                                color: $light-text2;
-                                @include transition($t $cubic);
-                            }
-                            &__btn {
-                                &-text {
-                                    color: $light-text2;
-                                    @include transition($t $cubic);
-                                }
-                                &-icon {
-                                    g {
-                                        fill: $yellow;
-                                        @include transition($t $cubic);
-                                    }
-                                }
                             }
                         }
                     }

@@ -376,7 +376,7 @@ a {
     &__number {
         @include text(6.1rem, dinb, 5.5rem, $main-text, uppercase);
     }
-    @include xxs {
+    @include sm {
         width: 7.5rem;
         padding-block: 0.8rem 0;
         &__text {
