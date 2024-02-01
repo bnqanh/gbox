@@ -401,9 +401,8 @@
                         display: none;
                     }
                     .square {
-                        display: flex;
-                        gap: 1px;
-                        flex-direction: column;
+                        display: block;
+                        text-align: center;
                         width: 10rem;
                         padding-block: 1.8rem;
                         &__text {
