@@ -404,14 +404,15 @@
                         display: block;
                         text-align: center;
                         width: 10rem;
-                        padding-block: 1.8rem;
+                        padding-block: 2rem 0;
                         &__text {
                             font-size: 1.2rem;
                             line-height: 1.8rem;
                         }
                         &__number {
                             font-size: 6.4rem;
-                            line-height: 5rem;
+                            line-height: 8.4rem;
+                            margin-top: -1.8rem;
                         }
                     }
                 }
