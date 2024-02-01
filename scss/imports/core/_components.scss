@@ -278,7 +278,7 @@ a {
     &.--black {
         --color: #171717;
     }
-    &.--light{
+    &.--light {
         --color: #f5f5f5;
     }
 }
@@ -364,11 +364,10 @@ a {
     }
 }
 .square {
-    display: grid;
-    place-items: center;
     width: 12rem;
     aspect-ratio: 1/1;
     letter-spacing: 0;
+    text-align: center;
     background-color: $yellow;
     padding-block: 2.2rem;
     &__text {
@@ -379,14 +378,14 @@ a {
     }
     @include xxs {
         width: 7.5rem;
-        padding-block: 1.2rem 1rem;
+        padding-block: 0.8rem 0;
         &__text {
             font-size: 1.2rem;
-            line-height: 1.25rem;
+            line-height: 2.4rem;
         }
         &__number {
             font-size: 3.85rem;
-            line-height: 4rem;
+            line-height: 4.3rem;
         }
     }
 }
