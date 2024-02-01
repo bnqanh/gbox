@@ -401,6 +401,9 @@
                         display: none;
                     }
                     .square {
+                        display: flex;
+                        gap: 1px;
+                        flex-direction: column;
                         width: 10rem;
                         padding-block: 1.8rem;
                         &__text {
@@ -408,8 +411,6 @@
                             line-height: 1.8rem;
                         }
                         &__number {
-                            display: inline-flex;
-                            align-items: flex-end;
                             font-size: 6.4rem;
                             line-height: 5rem;
                         }
