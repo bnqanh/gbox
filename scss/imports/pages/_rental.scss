@@ -126,6 +126,10 @@
                                 }
                                 .input {
                                     position: relative;
+                                    input,
+                                    img {
+                                        cursor: pointer;
+                                    }
                                     img {
                                         position: absolute;
                                         top: 50%;
@@ -133,7 +137,6 @@
                                         width: 2.2rem;
                                         height: 2.2rem;
                                         @include transform(translateY(-50%));
-                                        cursor: pointer;
                                     }
                                 }
                             }
@@ -280,10 +283,15 @@
             min-width: max-content;
             border: 1px solid $black-line !important;
             padding: 0.5rem;
-            td a {
-                padding: 0.4rem;
-                text-align: center;
-                cursor: pointer;
+            td {
+                padding: 1.25rem 0.5rem;
+                span {
+                    text-align: center;
+                }
+                a {
+                    text-align: center;
+                    cursor: pointer;
+                }
             }
             &-calendar {
                 @include text(1.4rem, pnr, 2rem, $main-text, capitalize);
@@ -353,8 +361,8 @@
             border: none;
             border-radius: 0;
         }
-        @include sm{
-            &-datepicker{
+        @include sm {
+            &-datepicker {
                 position: fixed !important;
                 top: var(--height-header) !important;
                 left: 0 !important;
