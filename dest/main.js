@@ -94,6 +94,8 @@ $(document).ready(function () {
             header.removeClass('scroll')
 
     })
+    //run radio tabs
+    radioTabs();
     // run all works tabs function
     allworksTabs();
     // run load more in works tabs
@@ -223,4 +225,38 @@ function load_more_responsive(element, btn_class, count1, count2, count3) {
             }
         );
     }
+}
+// radio tabs function
+function radioTabs() {
+    // Tabs functionality
+    $('.radio_tabs').each(function (e) {
+        // Hide all tab panels except for the first
+        $('.radio_tabs-panel').not(':first').hide();
+
+        // Add active statuses to first tab and show display
+        $('.radio_tabs-item', this).removeClass('active');
+        $('.radio_tabs-item:first-child', this).addClass('active');
+        $('.radio_tabs-panel:first-child').show();
+
+        // Tab clicked
+        $('.radio_tabs-item', this).click(function (e) {
+            // Prevent the anchor's default click action
+            e.preventDefault();
+
+            // Corresponding tabs panel
+            var panel = $(this).attr('data-id');
+
+            // Remove active statuses to other tabs
+            $(this).siblings().removeClass('active');
+
+            // Add active status to this tab
+            $(this).addClass('active');
+
+            // Hide other tab panels
+            $(panel).siblings().hide();
+
+            // Showing the clicked tabs' panel
+            $(panel).fadeIn(400);
+        });
+    });
 }

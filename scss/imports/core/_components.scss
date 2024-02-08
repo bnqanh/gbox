@@ -242,6 +242,7 @@ a {
     justify-content: flex-end;
     @include text(1.6rem, pnr, 3rem, var(--color), capitalize);
     letter-spacing: 0;
+
     &__item {
         display: flex;
         align-items: center;
@@ -392,6 +393,17 @@ a {
     }
     &__number {
         @include text(6.1rem, dinb, 5.5rem, $main-text, uppercase);
+    }
+    &.--mini {
+        display: block;
+        width: 4rem;
+        background-color: #111111;
+        border: 1px solid #464646;
+        padding-block: 0.5rem;
+        .square__number {
+            letter-spacing: -0.4px;
+            @include text(2.4rem, dinb, 3rem, #b4b4b4, uppercase);
+        }
     }
     @include sm {
         width: 7.5rem;
