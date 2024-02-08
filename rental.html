@@ -193,7 +193,7 @@
                                 <p>Booking Duration:</p>
                                 <div class="group">
                                     <div class="input --box">
-                                        <input type="text" id="from" name="from" placeholder="dd/mm/yy">
+                                        <input type="text" id="from" name="from" placeholder="dd/mm/yy" readonly="readonly">
                                     </div>
                                     <svg class="icon" width="800px" height="800px" viewBox="-4.5 0 20 20" version="1.1"
                                         xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -211,7 +211,7 @@
                                         </g>
                                     </svg>
                                     <div class="input --box">
-                                        <input type="text" id="to" name="to" placeholder="dd/mm/yy">
+                                        <input type="text" id="to" name="to" placeholder="dd/mm/yy" readonly="readonly">
                                     </div>
                                 </div>
                             </div>
@@ -325,19 +325,20 @@
                         showOn: "button",
                         buttonImage: "./img/date_input.png",
                         buttonImageOnly: true,
-                        buttonText: "",
+                        buttonText: "Calendar",
                     })
                     .on("change", function () {
                         to.datepicker("option", "minDate", getDate(this));
                     }),
                 to = $("#to").datepicker({
                     numberOfMonths: 1,
+                    minDate: 0,
                     dateFormat: dateFormat,
                     showAnim: "fadeIn",
                     showOn: "button",
                     buttonImage: "./img/date_input.png",
                     buttonImageOnly: true,
-                    buttonText: "",
+                    buttonText: "Calendar",
                 })
                     .on("change", function () {
                         from.datepicker("option", "maxDate", getDate(this));
