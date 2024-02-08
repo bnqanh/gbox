@@ -284,10 +284,9 @@
             border: 1px solid $black-line !important;
             padding: 0.5rem;
             td {
+                text-align: center;
                 padding: 1.25rem 0.5rem;
-                span {
-                    text-align: center;
-                }
+                span,
                 a {
                     text-align: center;
                     cursor: pointer;
