@@ -44,7 +44,7 @@
     }
     @include sm {
         display: block;
-        height: 100vh;
+        height: calc(100vh - var(--height-header));
         overflow: scroll;
         &__menu {
             flex-direction: column;
