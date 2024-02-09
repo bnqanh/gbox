@@ -77,21 +77,23 @@ $(document).ready(function () {
         $('#header-nav').toggleClass("active");
         $('#overlay').toggleClass('active');
         $('#burger-btn').toggleClass('active');
+        $('.mainwrapper').toggleClass('--scaleX');
     });
     $('#overlay').click(() => {
         $('#header-nav').removeClass("active");
         $('#overlay').removeClass('active');
         $('#burger-btn').removeClass('active');
+        $('.mainwrapper').removeClass('--scaleX');
     })
     // show scroll menu
     $(window).scroll(() => {
         var header = $('#header');
         if (pageYOffset > 70) {
             header.addClass('--scroll')
-            $('.overlay').removeClass('active')
+            //$('.overlay').removeClass('active')
         }
         else
-            header.removeClass('scroll')
+            header.removeClass('--scroll')
 
     })
     //run radio tabs
@@ -112,7 +114,7 @@ $(document).ready(function () {
     //click fullscreen button
     $('.btn.--fullscreen').on('click', function () {
         if (matchMedia("(min-width: 62em)").matches)
-        Fancybox.fromNodes($('[data-fancybox="details"]'), {
+            Fancybox.fromNodes($('[data-fancybox="details"]'), {
                 placeFocusBack: false,
                 idle: false,
                 compact: false,

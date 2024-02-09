@@ -20,7 +20,7 @@ body {
     @include text(1.2rem, pnr, 2rem, $main-text, none); // tuỳ chỉnh
     background: $main-bg;
     position: relative;
-    
+
     .container-fluid {
         width: 100%;
         padding-right: var(--gap);
@@ -67,6 +67,14 @@ body {
         width: 100%;
         margin: auto;
         @include visible;
+        @include transform(scaleX(1));
+        @include transform-origin(right center);
+        @include transition($t $cubic);
+        &.--scaleX {
+            @include transform(scaleX(0.75));
+            @include transform-origin(right center);
+            @include transition($t $cubic);
+        }
     }
     @include lg {
         // CSS responsive large desktop

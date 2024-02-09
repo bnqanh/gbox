@@ -78,20 +78,21 @@ $(document).ready(function () {
     $('#header-nav').toggleClass("active");
     $('#overlay').toggleClass('active');
     $('#burger-btn').toggleClass('active');
+    $('.mainwrapper').toggleClass('--scaleX');
   });
   $('#overlay').click(function () {
     $('#header-nav').removeClass("active");
     $('#overlay').removeClass('active');
     $('#burger-btn').removeClass('active');
+    $('.mainwrapper').removeClass('--scaleX');
   }); // show scroll menu
 
   $(window).scroll(function () {
     var header = $('#header');
 
     if (pageYOffset > 70) {
-      header.addClass('--scroll');
-      $('.overlay').removeClass('active');
-    } else header.removeClass('scroll');
+      header.addClass('--scroll'); //$('.overlay').removeClass('active')
+    } else header.removeClass('--scroll');
   }); //run radio tabs
 
   radioTabs(); // run all works tabs function

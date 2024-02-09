@@ -4,14 +4,18 @@
     top: 0;
     left: 0;
     width: 100%;
-    z-index: var(--z-fixed);
     --height-top: 7.2rem;
+    z-index: var(--z-fixed);
     .container {
         height: 100%;
     }
     &__top {
         height: var(--height-top);
         background-color: $header-top;
+        @include visible(1);
+        @include transform(scaleY(1));
+        @include transform-origin(center top);
+        @include transition($t $cubic);
         &-container {
             position: relative;
             height: 100%;
@@ -104,6 +108,23 @@
         height: calc(var(--height-header) - var(--height-top));
         padding-top: 1.8rem;
         background-color: $main-bg;
+        @include transform(translateY(0));
+        @include transition($t $cubic);
+    }
+    &.--scroll {
+        @include minW($sm-max) {
+            height: calc(var(--height-header) - var(--height-top));
+            .header__top {
+                @include visible(0);
+                @include transform(scaleY(0));
+                @include transform-origin(center top);
+                @include transition($t $cubic);
+            }
+            .header__nav {
+                @include transform(translateY(calc(0% - var(--height-top))));
+                @include transition($t $cubic);
+            }
+        }
     }
     @include sm {
         --height-top: 6rem;
