@@ -419,14 +419,17 @@ a {
         &.--sm-w10 {
             width: 10rem;
             padding-block: 1.5rem 0;
-            &__text {
+            .square__text {
                 font-size: 1.2rem;
                 line-height: 2.3rem;
             }
-            &__number {
+            .square__number {
                 font-size: 6.4rem;
                 line-height: 6.6rem;
             }
+        }
+        &.--mini {
+            padding-block: 1rem 0;
         }
     }
 }

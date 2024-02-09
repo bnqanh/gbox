@@ -44,11 +44,12 @@
     }
     @include sm {
         display: block;
+        height: 100vh;
+        overflow: scroll;
         &__menu {
             flex-direction: column;
             gap: 3rem;
             padding: 3.6rem 1.5rem;
-
             &-item {
                 &.left,
                 &.right {
