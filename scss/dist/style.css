@@ -562,6 +562,39 @@ body .mainwrapper {
   margin: auto;
   opacity: 1;
   pointer-events: auto;
+  transform: scaleX(1);
+  -webkit-transform: scaleX(1);
+  -moz-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  -o-transform: scaleX(1);
+  transform-origin: right center;
+  -webkit-transform-origin: right center;
+  -moz-transform-origin: right center;
+  -ms-transform-origin: right center;
+  -o-transform-origin: right center;
+  transition: 0.4s cubic-bezier(0.84, 0.13, 0.33, 0.97);
+  -webkit-transition: 0.4s cubic-bezier(0.84, 0.13, 0.33, 0.97);
+  -moz-transition: 0.4s cubic-bezier(0.84, 0.13, 0.33, 0.97);
+  -ms-transition: 0.4s cubic-bezier(0.84, 0.13, 0.33, 0.97);
+  -o-transition: 0.4s cubic-bezier(0.84, 0.13, 0.33, 0.97);
+}
+
+body .mainwrapper.--scaleX {
+  transform: scaleX(0.75);
+  -webkit-transform: scaleX(0.75);
+  -moz-transform: scaleX(0.75);
+  -ms-transform: scaleX(0.75);
+  -o-transform: scaleX(0.75);
+  transform-origin: right center;
+  -webkit-transform-origin: right center;
+  -moz-transform-origin: right center;
+  -ms-transform-origin: right center;
+  -o-transform-origin: right center;
+  transition: 0.4s cubic-bezier(0.84, 0.13, 0.33, 0.97);
+  -webkit-transition: 0.4s cubic-bezier(0.84, 0.13, 0.33, 0.97);
+  -moz-transition: 0.4s cubic-bezier(0.84, 0.13, 0.33, 0.97);
+  -ms-transition: 0.4s cubic-bezier(0.84, 0.13, 0.33, 0.97);
+  -o-transition: 0.4s cubic-bezier(0.84, 0.13, 0.33, 0.97);
 }
 
 img {
@@ -1378,6 +1411,23 @@ a {
   text-transform: uppercase;
 }
 
+.square.--mini {
+  display: block;
+  width: 4rem;
+  background-color: #111111;
+  border: 1px solid #464646;
+  padding-block: 0.4rem;
+}
+
+.square.--mini .square__number {
+  letter-spacing: -0.4px;
+  font-size: 2.4rem;
+  font-family: dinb;
+  line-height: 3rem;
+  color: #b4b4b4;
+  text-transform: uppercase;
+}
+
 @media screen and (max-width: 61.999em) {
   .square {
     width: 7.5rem;
@@ -1395,13 +1445,16 @@ a {
     width: 10rem;
     padding-block: 1.5rem 0;
   }
-  .square.--sm-w10__text {
+  .square.--sm-w10 .square__text {
     font-size: 1.2rem;
     line-height: 2.3rem;
   }
-  .square.--sm-w10__number {
+  .square.--sm-w10 .square__number {
     font-size: 6.4rem;
     line-height: 6.6rem;
+  }
+  .square.--mini {
+    padding-block: 0.8rem 0;
   }
 }
 
@@ -3489,8 +3542,9 @@ a {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: var(--z-fixed);
   --height-top: 7.2rem;
+  background-color: #f4f4f4;
+  z-index: var(--z-fixed);
 }
 
 .header .container {
@@ -3500,6 +3554,23 @@ a {
 .header__top {
   height: var(--height-top);
   background-color: #525355;
+  opacity: 1;
+  pointer-events: auto;
+  transform: scaleY(1);
+  -webkit-transform: scaleY(1);
+  -moz-transform: scaleY(1);
+  -ms-transform: scaleY(1);
+  -o-transform: scaleY(1);
+  transform-origin: center top;
+  -webkit-transform-origin: center top;
+  -moz-transform-origin: center top;
+  -ms-transform-origin: center top;
+  -o-transform-origin: center top;
+  transition: 0.4s cubic-bezier(0.84, 0.13, 0.33, 0.97);
+  -webkit-transition: 0.4s cubic-bezier(0.84, 0.13, 0.33, 0.97);
+  -moz-transition: 0.4s cubic-bezier(0.84, 0.13, 0.33, 0.97);
+  -ms-transition: 0.4s cubic-bezier(0.84, 0.13, 0.33, 0.97);
+  -o-transition: 0.4s cubic-bezier(0.84, 0.13, 0.33, 0.97);
 }
 
 .header__top-container {
@@ -3671,6 +3742,53 @@ a {
   height: calc(var(--height-header) - var(--height-top));
   padding-top: 1.8rem;
   background-color: #f4f4f4;
+  transform: translateY(0);
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
+  transition: 0.4s cubic-bezier(0.84, 0.13, 0.33, 0.97);
+  -webkit-transition: 0.4s cubic-bezier(0.84, 0.13, 0.33, 0.97);
+  -moz-transition: 0.4s cubic-bezier(0.84, 0.13, 0.33, 0.97);
+  -ms-transition: 0.4s cubic-bezier(0.84, 0.13, 0.33, 0.97);
+  -o-transition: 0.4s cubic-bezier(0.84, 0.13, 0.33, 0.97);
+}
+
+@media (min-width: 61.999em) {
+  .header.--scroll {
+    height: calc(var(--height-header) - var(--height-top));
+  }
+  .header.--scroll .header__top {
+    opacity: 0;
+    pointer-events: none;
+    transform: scaleY(0);
+    -webkit-transform: scaleY(0);
+    -moz-transform: scaleY(0);
+    -ms-transform: scaleY(0);
+    -o-transform: scaleY(0);
+    transform-origin: center top;
+    -webkit-transform-origin: center top;
+    -moz-transform-origin: center top;
+    -ms-transform-origin: center top;
+    -o-transform-origin: center top;
+    transition: 0.4s cubic-bezier(0.84, 0.13, 0.33, 0.97);
+    -webkit-transition: 0.4s cubic-bezier(0.84, 0.13, 0.33, 0.97);
+    -moz-transition: 0.4s cubic-bezier(0.84, 0.13, 0.33, 0.97);
+    -ms-transition: 0.4s cubic-bezier(0.84, 0.13, 0.33, 0.97);
+    -o-transition: 0.4s cubic-bezier(0.84, 0.13, 0.33, 0.97);
+  }
+  .header.--scroll .header__nav {
+    transform: translateY(calc(0% - var(--height-top)));
+    -webkit-transform: translateY(calc(0% - var(--height-top)));
+    -moz-transform: translateY(calc(0% - var(--height-top)));
+    -ms-transform: translateY(calc(0% - var(--height-top)));
+    -o-transform: translateY(calc(0% - var(--height-top)));
+    transition: 0.4s cubic-bezier(0.84, 0.13, 0.33, 0.97);
+    -webkit-transition: 0.4s cubic-bezier(0.84, 0.13, 0.33, 0.97);
+    -moz-transition: 0.4s cubic-bezier(0.84, 0.13, 0.33, 0.97);
+    -ms-transition: 0.4s cubic-bezier(0.84, 0.13, 0.33, 0.97);
+    -o-transition: 0.4s cubic-bezier(0.84, 0.13, 0.33, 0.97);
+  }
 }
 
 @media screen and (max-width: 61.999em) {
@@ -3807,6 +3925,8 @@ a {
 @media screen and (max-width: 61.999em) {
   .nav {
     display: block;
+    height: calc(100vh - var(--height-header));
+    overflow: scroll;
   }
   .nav__menu {
     flex-direction: column;
@@ -5495,7 +5615,686 @@ a {
 }
 
 .rentalpage .rental {
-  padding-block: var(--height-header) 22rem;
+  display: grid;
+  grid-template-columns: minmax(21rem, 26rem) minmax(64rem, 69rem);
+  gap: 3rem;
+  padding-block: var(--height-header) 18.5rem;
+}
+
+.rentalpage .rental .title {
+  font-size: 2.8rem;
+  font-family: pneb;
+  line-height: 3rem;
+  color: #39382f;
+  text-transform: none;
+  letter-spacing: -0.4px;
+}
+
+.rentalpage .rental__studio {
+  width: 100%;
+  aspect-ratio: 26/64;
+  background-color: #525355;
+  padding: 7.4rem 2rem;
+}
+
+.rentalpage .rental__studio-name {
+  height: fit-content;
+}
+
+.rentalpage .rental__studio-dimensions {
+  padding-block: 2.6rem;
+}
+
+.rentalpage .rental__studio-dimensions .title {
+  font-size: 3.2rem;
+  color: #fff;
+  text-transform: capitalize;
+}
+
+.rentalpage .rental__studio-dimensions .subtitle {
+  font-size: 1.2rem;
+  font-family: pnr;
+  line-height: 3rem;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.32rem;
+  margin-top: 1.4rem;
+}
+
+.rentalpage .rental__studio-dimensions .desc {
+  font-size: 1.4rem;
+  font-family: pnr;
+  line-height: 2rem;
+  color: #fff;
+  text-transform: none;
+  letter-spacing: 0;
+  margin-top: 0.4rem;
+}
+
+.rentalpage .rental__details {
+  padding: 6.8rem 2rem 8rem;
+}
+
+.rentalpage .rental__details-form .group {
+  display: flex;
+  gap: 8rem;
+}
+
+.rentalpage .rental__details-form .input {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  font-size: 1.2rem;
+  font-family: pnr;
+  line-height: 2rem;
+  color: #171717;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.rentalpage .rental__details-form .input input,
+.rentalpage .rental__details-form .input textarea {
+  font-size: 1.2rem;
+  font-family: pnr;
+  line-height: 2rem;
+  color: #171717;
+  text-transform: none;
+  letter-spacing: 0;
+  width: 100%;
+  min-width: 22rem;
+  max-width: 52rem;
+  background-color: transparent;
+  outline: none;
+  border: 1px solid #000;
+  padding: 0.1rem 1rem;
+}
+
+.rentalpage .rental__details-form .input.--line input {
+  border: none;
+  border-bottom: 1px solid #000;
+}
+
+.rentalpage .rental__details-form .input.--box textarea {
+  height: 9rem;
+  resize: none;
+  margin-top: 2.4rem;
+}
+
+.rentalpage .rental__details-form .input.--box textarea::-webkit-scrollbar {
+  width: 3px;
+}
+
+.rentalpage .rental__details-form .input.--box textarea::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+.rentalpage .rental__details-form .input.--box textarea::-webkit-scrollbar-thumb {
+  background: #000000;
+}
+
+.rentalpage .rental__details-form .input.--box input {
+  line-height: 3.6rem;
+  margin-block: 1.5rem;
+}
+
+.rentalpage .rental__details-form .company__info {
+  display: flex;
+  gap: 8rem;
+  padding-block: 4rem;
+}
+
+.rentalpage .rental__details-form .company__info-box {
+  display: flex;
+  flex-direction: column;
+  gap: 2.2rem;
+}
+
+.rentalpage .rental__details-form .booking__details {
+  padding-block: 2.6rem 5rem;
+}
+
+.rentalpage .rental__details-form .booking__details-studio .group {
+  gap: 2rem;
+  padding-block: 1.5rem 2.5rem;
+}
+
+.rentalpage .rental__details-form .booking__details-studio .group .square.--mini {
+  cursor: pointer;
+  transition: 0.4s cubic-bezier(0.84, 0.13, 0.33, 0.97);
+  -webkit-transition: 0.4s cubic-bezier(0.84, 0.13, 0.33, 0.97);
+  -moz-transition: 0.4s cubic-bezier(0.84, 0.13, 0.33, 0.97);
+  -ms-transition: 0.4s cubic-bezier(0.84, 0.13, 0.33, 0.97);
+  -o-transition: 0.4s cubic-bezier(0.84, 0.13, 0.33, 0.97);
+}
+
+.rentalpage .rental__details-form .booking__details-studio .group .square.--mini ::selection {
+  background: transparent;
+}
+
+.rentalpage .rental__details-form .booking__details-studio .group .square.--mini.active {
+  background-color: #ffde00;
+  transition: 0.4s cubic-bezier(0.84, 0.13, 0.33, 0.97);
+  -webkit-transition: 0.4s cubic-bezier(0.84, 0.13, 0.33, 0.97);
+  -moz-transition: 0.4s cubic-bezier(0.84, 0.13, 0.33, 0.97);
+  -ms-transition: 0.4s cubic-bezier(0.84, 0.13, 0.33, 0.97);
+  -o-transition: 0.4s cubic-bezier(0.84, 0.13, 0.33, 0.97);
+}
+
+.rentalpage .rental__details-form .booking__details-studio .group .square.--mini.active .square__number {
+  color: #171717;
+}
+
+.rentalpage .rental__details-form .booking__details-duration .group {
+  display: flex;
+  align-items: center;
+  gap: 3.5rem;
+}
+
+.rentalpage .rental__details-form .booking__details-duration .group .icon {
+  width: 1rem;
+  height: 1.6rem;
+}
+
+.rentalpage .rental__details-form .booking__details-duration .group .input {
+  position: relative;
+}
+
+.rentalpage .rental__details-form .booking__details-duration .group .input input,
+.rentalpage .rental__details-form .booking__details-duration .group .input img {
+  cursor: pointer;
+}
+
+.rentalpage .rental__details-form .booking__details-duration .group .input img {
+  position: absolute;
+  top: 50%;
+  right: 1.2rem;
+  width: 2.2rem;
+  height: 2.2rem;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+}
+
+.rentalpage .rental__details-form .booking__details-reqs .lighting p {
+  margin-top: 0.4rem;
+}
+
+.rentalpage .rental__details-form .booking__details-reqs .input input,
+.rentalpage .rental__details-form .booking__details-reqs .input textarea {
+  width: 22rem;
+}
+
+.rentalpage .rental__details-form .submit__container {
+  display: flex;
+  gap: 2rem;
+}
+
+.rentalpage .rental__details-form .submit__container .note {
+  width: 19rem;
+}
+
+.rentalpage .rental__details-form .submit__container .booking_button {
+  border: none;
+  outline: none;
+  font-size: 2rem;
+  font-family: pneb;
+  line-height: 3rem;
+  color: #ffde00;
+  text-transform: uppercase;
+  letter-spacing: -0.4px;
+}
+
+@media screen and (max-width: 61.999em) {
+  .rentalpage .rental {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding-block: calc(var(--height-header) + 2.8rem) 26rem;
+  }
+  .rentalpage .rental__studio {
+    width: 100%;
+    aspect-ratio: initial;
+    background-color: #f4f4f4;
+    padding: 0 1rem;
+  }
+  .rentalpage .rental__studio-dimensions {
+    padding-block: 0;
+  }
+  .rentalpage .rental__studio-dimensions .title {
+    color: #171717;
+  }
+  .rentalpage .rental__studio-dimensions .subtitle {
+    color: #2e2c2c;
+    line-height: 2rem;
+    margin-top: 1rem;
+  }
+  .rentalpage .rental__studio-dimensions .desc {
+    color: #2e2c2c;
+    margin-top: 0;
+  }
+  .rentalpage .rental__studio .radio_tabs-panel {
+    display: flex;
+    gap: 2.6rem;
+  }
+  .rentalpage .rental__details {
+    padding: 3.8rem 1rem 5rem;
+  }
+  .rentalpage .rental__details-form .input input,
+.rentalpage .rental__details-form .input textarea {
+    max-width: 100%;
+  }
+  .rentalpage .rental__details-form .group {
+    gap: 0;
+  }
+  .rentalpage .rental__details-form .company__info {
+    flex-direction: column;
+    gap: 3rem;
+    padding-block: 2.6rem 3.8rem;
+  }
+  .rentalpage .rental__details-form .booking__details {
+    padding-block: 2.6rem 2rem;
+  }
+  .rentalpage .rental__details-form .booking__details-studio .group {
+    gap: 3rem;
+  }
+  .rentalpage .rental__details-form .booking__details-reqs {
+    flex-direction: column;
+    gap: 3.5rem;
+    padding-top: 2.5rem;
+  }
+  .rentalpage .rental__details-form .booking__details-reqs .input input,
+.rentalpage .rental__details-form .booking__details-reqs .input textarea {
+    width: 100%;
+  }
+  .rentalpage .rental__details-form .booking__details-duration {
+    margin-top: 2.5rem;
+  }
+  .rentalpage .rental__details-form .booking__details-duration .group {
+    flex-direction: column;
+    gap: 0;
+  }
+  .rentalpage .rental__details-form .booking__details-duration .group .icon {
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform-origin: center center;
+    -webkit-transform-origin: center center;
+    -moz-transform-origin: center center;
+    -ms-transform-origin: center center;
+    -o-transform-origin: center center;
+  }
+  .rentalpage .rental__details-form .booking__details-duration .group .input {
+    width: 100%;
+  }
+  .rentalpage .rental__details-form .booking__details-ref {
+    margin-top: 2rem;
+  }
+  .rentalpage .rental__details-form .booking__details-where {
+    margin-top: 0.6rem;
+  }
+  .rentalpage .rental__details-form .submit__container .note {
+    width: 12.57rem;
+  }
+}
+
+.rentalpage .ui-datepicker {
+  min-width: max-content;
+  border: 1px solid #000000 !important;
+  padding: 0.5rem;
+}
+
+.rentalpage .ui-datepicker td {
+  text-align: center;
+  padding: 1.25rem 0.5rem;
+}
+
+.rentalpage .ui-datepicker td span,
+.rentalpage .ui-datepicker td a {
+  text-align: center;
+  cursor: pointer;
+}
+
+.rentalpage .ui-datepicker-calendar {
+  font-size: 1.4rem;
+  font-family: pnr;
+  line-height: 2rem;
+  color: #171717;
+  text-transform: capitalize;
+  letter-spacing: 0.1rem;
+}
+
+.rentalpage .ui-datepicker-calendar .ui-state-default {
+  border: none;
+  background: transparent;
+}
+
+.rentalpage .ui-datepicker-calendar .ui-state-highlight {
+  color: #000;
+  background: #ffde00;
+}
+
+.rentalpage .ui-datepicker-calendar .ui-state-active {
+  color: #ebebeb;
+  background: #525355;
+}
+
+.rentalpage .ui-datepicker-prev, .rentalpage .ui-datepicker-next {
+  top: 50%;
+  width: 1.2rem;
+  height: 1.2rem;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+}
+
+.rentalpage .ui-datepicker-prev span, .rentalpage .ui-datepicker-next span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  margin: 0;
+}
+
+.rentalpage .ui-datepicker-prev {
+  left: 0.5rem;
+}
+
+.rentalpage .ui-datepicker-prev .ui-icon-circle-triangle-w {
+  background-image: url(../img/arrow_left.svg);
+}
+
+.rentalpage .ui-datepicker-next {
+  right: 0.5rem;
+}
+
+.rentalpage .ui-datepicker-next .ui-icon-circle-triangle-e {
+  background-image: url(../img/arrow_right.svg);
+}
+
+.rentalpage .ui-widget {
+  font-size: 1.4rem;
+  font-family: pnr;
+  line-height: 2rem;
+  color: #171717;
+  text-transform: capitalize;
+}
+
+.rentalpage .ui-widget-content {
+  color: #171717;
+  background: #f4f4f4;
+  border: none;
+}
+
+.rentalpage .ui-widget-header {
+  color: #ebebeb;
+  letter-spacing: 0.16rem;
+  background: #525355;
+}
+
+.rentalpage .ui-widget-header .ui-icon {
+  background-size: cover;
+  background-position: center !important;
+}
+
+.rentalpage .ui-widget-header a {
+  cursor: pointer;
+}
+
+.rentalpage .ui-widget-header a:hover {
+  background: transparent;
+}
+
+.rentalpage .ui-corner-all {
+  border: none;
+  border-radius: 0;
+}
+
+@media screen and (max-width: 61.999em) {
+  .rentalpage .ui-datepicker {
+    position: fixed !important;
+    top: var(--height-header) !important;
+    left: 0 !important;
+    width: 100%;
+    height: calc(100vh - var(--height-header));
+    overflow: scroll;
+    padding: 1rem;
+    z-index: var(--z-fixed);
+  }
+  .rentalpage .ui-datepicker .ui-datepicker-header {
+    padding: 1rem;
+  }
+  .rentalpage .ui-datepicker-prev, .rentalpage .ui-datepicker-next {
+    width: 2rem;
+    height: 2rem;
+  }
+  .rentalpage .ui-datepicker-prev {
+    left: 1rem;
+  }
+  .rentalpage .ui-datepicker-next {
+    right: 1rem;
+  }
+}
+
+.cafepage .cafe {
+  position: relative;
+  margin-top: var(--height-header);
+}
+
+.cafepage .cafe__background {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.cafepage .cafe__background-img {
+  max-width: 100%;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  position: absolute;
+}
+
+.cafepage .cafe__welcome {
+  width: 100%;
+}
+
+.cafepage .cafe__welcome-subtitle, .cafepage .cafe__welcome-title {
+  color: #fbdb01;
+}
+
+.cafepage .cafe__welcome-title {
+  max-width: fit-content;
+  background-color: transparent;
+}
+
+.cafepage .cafe__welcome-desc {
+  color: #ebebeb;
+  max-width: 74rem;
+}
+
+.cafepage .cafe__subtitle {
+  font-size: 1.4rem;
+  font-family: pnl;
+  line-height: 2.2rem;
+  color: #eaeae7;
+  text-transform: uppercase;
+  letter-spacing: 0.32rem;
+  text-align: center;
+  padding-block: 2.6rem 4.3rem;
+}
+
+@media screen and (max-width: 61.999em) {
+  .cafepage .cafe__welcome {
+    padding-block: 4.5rem;
+  }
+  .cafepage .cafe__subtitle {
+    padding-block: 2.4rem 5.2rem;
+  }
+}
+
+@media (max-width: 35.999em) {
+  .cafepage .cafe__welcome-desc {
+    max-width: 26rem;
+  }
+  .cafepage .cafe__welcome.--bottom-line::after {
+    width: 26rem;
+  }
+}
+
+.cafepage .gallery {
+  background-color: #19191a;
+  padding-bottom: 4rem;
+}
+
+.cafepage .gallery__slider-item {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  height: 50rem;
+}
+
+.cafepage .gallery__slider-item .image {
+  position: relative;
+  overflow: hidden;
+}
+
+.cafepage .gallery__slider-item .image img {
+  max-width: 100%;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  position: absolute;
+}
+
+.cafepage .gallery__slider-item .image.--item1 {
+  grid-area: 1 / 1 / 3 / 2;
+}
+
+.cafepage .gallery__slider-item .image.--item2 {
+  grid-area: 1 / 2 / 2 / 4;
+}
+
+.cafepage .gallery__slider-item .image.--item3 {
+  grid-area: 2 / 2 / 3 / 3;
+}
+
+.cafepage .gallery__slider-item .image.--item4 {
+  grid-area: 2 / 3 / 3 / 4;
+}
+
+.cafepage .gallery__buttons {
+  padding-block: 3.3rem;
+}
+
+@media screen and (max-width: 61.999em) {
+  .cafepage .gallery {
+    padding-top: 2rem;
+  }
+  .cafepage .gallery__slider-item {
+    grid-template-columns: repeat(2, 1fr);
+    height: 50rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .cafepage .gallery__slider-item .image.--item1 {
+    grid-area: 1 / 1 / 2 / 2;
+  }
+  .cafepage .gallery__slider-item .image.--item2 {
+    grid-area: 1 / 2 / 2 / 3;
+  }
+  .cafepage .gallery__slider-item .image.--item3 {
+    grid-area: 2 / 1 / 3 / 2;
+  }
+  .cafepage .gallery__slider-item .image.--item4 {
+    grid-area: 2 / 2 / 3 / 3;
+  }
+  .cafepage .gallery__buttons {
+    justify-content: center;
+    padding-block: 2.4rem;
+  }
+}
+
+@media (max-width: 35.999em) {
+  .cafepage .gallery__slider-item {
+    display: flex;
+    flex-direction: column;
+    height: initial;
+  }
+  .cafepage .gallery__slider-item .image {
+    aspect-ratio: 300/170;
+  }
+}
+
+.cafepage .career {
+  padding-block: 5.4rem 28rem;
+}
+
+.cafepage .career__content {
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+.cafepage .career__content-title {
+  font-size: 1.4rem;
+  font-family: pnl;
+  line-height: 2.2rem;
+  color: #171717;
+  text-transform: uppercase;
+  letter-spacing: 0.32rem;
+  padding-bottom: 1.8rem;
+}
+
+.cafepage .career__content-desc {
+  max-width: 44rem;
+  font-size: 1.2rem;
+  font-family: arial;
+  line-height: 2.2rem;
+  color: #171717;
+  text-transform: none;
+  letter-spacing: -0.4px;
+}
+
+@media screen and (max-width: 61.999em) {
+  .cafepage .career {
+    padding-block: 3.5rem 32.5rem;
+  }
+  .cafepage .career__content-title {
+    padding-bottom: 1.4rem;
+  }
+}
+
+@media (max-width: 35.999em) {
+  .cafepage .career__content-desc {
+    max-width: 28rem;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

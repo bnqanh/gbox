@@ -5,6 +5,7 @@
     left: 0;
     width: 100%;
     --height-top: 7.2rem;
+    background-color: $main-bg;
     z-index: var(--z-fixed);
     .container {
         height: 100%;
