@@ -102,7 +102,7 @@ $(document).ready(function () {
     allworksTabs();
     // run load more in works tabs
 
-    load_more_responsive($('.home .allworks__content-panel'), 'load__more', 6, 6, 3);
+    //load_more_responsive($('.home .allworks__content-panel'), 'load__more', 6, 6, 3);
     load_more_responsive($('.work .allworks__content-panel'), 'load__more', 9, 6, 5)
     // scroll up
     $(window).scroll(() => {
