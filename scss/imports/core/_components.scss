@@ -141,6 +141,8 @@ a {
         margin-block: 1.2rem;
         img {
             @include midimg(100%);
+            @include transform(translate(-50%, -50%) scale(1));
+            @include transition(transform $t $cubic);
         }
     }
     &__content {
@@ -156,10 +158,12 @@ a {
                 content: "";
                 position: absolute;
                 bottom: 0.3rem;
-                @include transform(translateX(-50%));
                 width: 1.6rem;
                 height: 3px;
                 background-color: $yellow;
+                @include transform(translateX(-50%) scaleX(1));
+                @include transform-origin(center center);
+                @include transition(transform $t $cubic);
             }
         }
         &-c,
@@ -167,6 +171,23 @@ a {
         &-d {
             @include text(1.2rem, pnr, 2rem, $main-text, none);
             letter-spacing: 0;
+        }
+    }
+    &:hover {
+        .card__img {
+            img {
+                @include transform(translate(-50%, -50%) scale(1.125));
+                @include transition(transform $t $cubic);
+            }
+        }
+        .card__content {
+            &-title {
+                &::after {
+                    @include transform(translateX(-50%) scaleX(10));
+                    @include transform-origin(center center);
+                    @include transition(transform $t $cubic);
+                }
+            }
         }
     }
     @include sm {

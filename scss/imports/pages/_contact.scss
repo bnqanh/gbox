@@ -43,13 +43,15 @@
                 }
             }
             &-map {
-                position: relative;
-                width: 100%;
-                padding-top: 45rem;
-                margin-top: 3rem;
-                overflow: hidden;
-                iframe {
-                    @include midimg(100%);
+                margin: 3rem 1rem;
+                .iframe {
+                    position: relative;
+                    width: 100%;
+                    padding-top: 45rem;
+                    overflow: hidden;
+                    iframe {
+                        @include midimg(100%);
+                    }
                 }
             }
         }
@@ -63,6 +65,8 @@
                     flex-direction: column;
                     gap: 0;
                     padding-top: 0;
+                    margin-left: 1rem;
+                    margin-right: 1rem;
                     .left,
                     .right {
                         text-align: center;
@@ -73,16 +77,6 @@
                             justify-content: center;
                             margin-top: 0;
                         }
-                    }
-                }
-                &-map {
-                    position: relative;
-                    width: 100%;
-                    padding-top: 45rem;
-                    margin-top: 3rem;
-                    overflow: hidden;
-                    iframe {
-                        @include midimg(100%);
                     }
                 }
             }
