@@ -22,25 +22,9 @@ $white-cl: #fff;
 $black-cl: #000;
 $red-cl: #d81f1f;
 $blue-cl: #00afab;
-$header-top: #525355;
-$yellow: #ffde00;
-$yellow-text: #fbdb01;
-$main-bg: #f4f4f4;
-$gallery-bg: #19191a;
-$footer-bg: #ffde00;
-$main-text: #171717;
-$main-text2: #2e2c2c;
-$dark-title: #39382f;
-$gray-text: #525355;
-$gray-arrow: #484647;
-$light-text: #ebebeb;
-$light-text2: #eaeaea;
-$light-title: #eaeae7;
-$hide-text: #898989;
-$black-line: #000000;
-$btn-bg: #231f20;
-//$gradient-cl: linear-gradient(180deg, #df1cff 0%, #814bf6 50.55%, #00bcff 100%);
-$gradient: linear-gradient(90deg, #000000 0%, #ffde00 50%, #898989 100%);
+
+$gradient-cl: linear-gradient(180deg, #df1cff 0%, #814bf6 50.55%, #00bcff 100%);
+
 // timing transition - tuỳ chỉnh
 $t: 0.4s;
 $cubic: cubic-bezier(0.84, 0.13, 0.33, 0.97);

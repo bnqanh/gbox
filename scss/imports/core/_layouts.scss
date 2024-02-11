@@ -17,8 +17,8 @@ body {
     width: 100%;
     max-width: $container-max-width;
     margin: auto;
-    @include text(1.2rem, pnr, 2rem, $main-text, none); // tuỳ chỉnh
-    background: $main-bg;
+    @include text(1.2rem, pnr, 2rem, $black-cl, none); // tuỳ chỉnh
+    background: $white-cl;
     position: relative;
 
     .container-fluid {
