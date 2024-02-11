@@ -1,0 +1,417 @@
+.studiopage {
+    .studio {
+        padding-block: var(--height-header) 21.4rem;
+        &__grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            row-gap: 7rem;
+            column-gap: 2rem;
+            margin: 7.4rem 0;
+            &-item {
+                .image {
+                    display: block;
+                    position: relative;
+                    width: 100%;
+                    aspect-ratio: 480/300;
+                    overflow: hidden;
+                    img {
+                        @include midimg(100%);
+                        @include transition(transform $t $cubic);
+                    }
+                    &::before {
+                        content: "";
+                        background-color: rgba($black-cl, 0.6);
+                        @include fullscreen();
+                        @include visible(1);
+                        @include transition($t $cubic);
+                        z-index: 1;
+                    }
+                }
+                .content {
+                    position: relative;
+                    display: flex;
+                    gap: 8rem;
+                    background-color: transparent;
+                    @include transition($t $cubic);
+                    &__desc {
+                        @include text(1.2rem, pnr, 2rem, $main-text, none);
+                        letter-spacing: 0;
+                        margin-top: 2.8rem;
+                        @include transition($t $cubic);
+                        &-label {
+                            line-height: 3rem;
+                            text-transform: uppercase;
+                        }
+                        &-param {
+                            margin-top: 0.4rem;
+                        }
+                    }
+                    &__btn {
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        display: flex;
+                        flex-direction: column;
+                        place-items: center;
+                        gap: 1rem;
+                        margin: 2.8rem 3rem;
+                        &-text {
+                            @include text(1.2rem, pnsb, 3rem, $main-text, uppercase);
+                            letter-spacing: 0;
+                            @include transition($t $cubic);
+                        }
+                        &-icon {
+                            width: 1.6rem;
+                            height: 1rem;
+                            g {
+                                fill: $gray-arrow;
+                                @include transition($t $cubic);
+                            }
+                        }
+                    }
+                }
+                &:hover {
+                    .image {
+                        img {
+                            @include transform(translate(-50%, -50%) scale(1.125));
+                            @include transition(transform $t $cubic);
+                        }
+                        &::before {
+                            @include visible(0);
+                            @include transition($t $cubic);
+                        }
+                    }
+                    .content {
+                        background-color: $header-top;
+                        @include transition($t $cubic);
+                        &__desc {
+                            color: $light-text2;
+                            @include transition($t $cubic);
+                        }
+                        &__btn {
+                            &-text {
+                                color: $light-text2;
+                                @include transition($t $cubic);
+                            }
+                            &-icon {
+                                g {
+                                    fill: $yellow;
+                                    @include transition($t $cubic);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        @include sm {
+            padding-block: var(--height-header) 29.6rem;
+            &__grid {
+                display: flex;
+                flex-direction: column;
+                gap: 4rem;
+                margin: 3rem 1rem;
+                &-item {
+                    .image {
+                        aspect-ratio: 300/187;
+                    }
+                    .content {
+                        gap: 2.5rem;
+                        &__desc {
+                            line-height: 1.8rem;
+                            margin-top: 1.2rem;
+                            margin-bottom: -0.4rem;
+                            &-label {
+                                line-height: 2rem;
+                            }
+                            &-param {
+                                margin-top: 1rem;
+                            }
+                        }
+                        &__btn {
+                            margin: 2rem 0;
+                            &-text {
+                                display: none;
+                            }
+                            &-icon {
+                                @include transform(rotate(-90deg));
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .details {
+        padding-block: var(--height-header) 25.5rem;
+        &__top {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            height: 7.3rem;
+        }
+        &__gallery {
+            padding-bottom: 6rem;
+            &-slider {
+                .item {
+                    position: relative;
+                    width: 100%;
+                    aspect-ratio: 980/478;
+                    overflow: hidden;
+                    img {
+                        @include midimg(100%);
+                    }
+                }
+            }
+            &-bottom {
+                display: flex;
+                justify-content: space-between;
+                padding-left: 2rem;
+                padding-right: 2rem;
+                .dimensions {
+                    padding-top: 2rem;
+                    padding-left: 2rem;
+                    padding-right: 2rem;
+                    &__title {
+                        @include text(1.2rem, pnr, 3rem, $main-text2, uppercase);
+                        letter-spacing: 0.32rem;
+                    }
+                    &__desc {
+                        @include text(1.4rem, pnr, 2rem, $main-text2, none);
+                        letter-spacing: 0;
+                    }
+                }
+                .group {
+                    display: flex;
+                    align-items: flex-start;
+                    gap: 6rem;
+                    padding-top: 2rem;
+                    padding-left: 3rem;
+                }
+            }
+            &-mbuttons {
+                display: none;
+                @include transform(translate(-50%, calc(-50% - 5.2rem)));
+            }
+        }
+        &__content {
+            display: grid;
+            column-gap: 6rem;
+            grid-template-columns: repeat(2, 1fr);
+            border-top: 1px solid $black-line;
+            padding-left: 2rem;
+            padding-right: 2rem;
+            @include text(1.4rem, pnr, 2rem, $main-text2, none);
+            letter-spacing: 0;
+            .title {
+                @include text(3.2rem, pneb, 3.2rem, $dark-title, capitalize);
+                letter-spacing: -0.4px;
+            }
+            &-pricing,
+            &-floorplan,
+            &-specs {
+                padding-block: 3rem;
+            }
+            &-pricing {
+                .desc {
+                    padding-block: 1.8rem 2.8rem;
+                }
+                .table {
+                    width: 100%;
+                    border: 1px solid $black-line;
+                    &__row {
+                        display: flex;
+                        justify-content: space-between;
+                        padding: 2rem;
+                        &-cell {
+                            .job {
+                                text-transform: capitalize;
+                            }
+                            &:not(:last-child) {
+                                padding-left: 4rem;
+                                padding-right: 4rem;
+                            }
+                        }
+                        &:not(:last-child) {
+                            border-bottom: 1px solid $black-line;
+                        }
+                    }
+                }
+            }
+            &-floorplan {
+                .floor {
+                    display: flex;
+                    flex-direction: column;
+                    position: relative;
+                    width: 27rem;
+                    aspect-ratio: 1/1;
+                    overflow: hidden;
+                    margin-top: 8.5rem;
+                    @include text(1.2rem, pnr, 2rem, $white-cl, none);
+                    letter-spacing: 0;
+                    &__bg {
+                        @include midimg(100%);
+                        z-index: -1;
+                    }
+                    &__client {
+                        top: 11.85%;
+                        left: 59.26%;
+                        color: $black-cl;
+                    }
+                    &__dimensions {
+                        top: 51.85%;
+                        left: 14.815%;
+                    }
+                    &__client,
+                    &__dimensions {
+                        position: absolute;
+                        &-title {
+                            text-transform: uppercase;
+                            font-family: pnb;
+                        }
+                    }
+                }
+            }
+            &-specs {
+                grid-area: 2/1/3/3;
+                .content {
+                    display: grid;
+                    column-gap: 6rem;
+                    grid-template-columns: repeat(2, 1fr);
+                    padding-block: 2.7rem;
+                    &__list {
+                        display: grid;
+                        gap: 2rem;
+                        height: fit-content;
+                    }
+                }
+            }
+        }
+        &__bottom {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+            &-arrow {
+                width: 1.6rem;
+                height: 1rem;
+                @include animation(move_down $t $cubic infinite alternate);
+                @include keyframes(move_down) {
+                    0% {
+                        @include transform(translateY(0%));
+                    }
+                    10% {
+                        @include transform(translateY(-10%));
+                    }
+                    20% {
+                        @include transform(translateY(-20%));
+                    }
+                    30% {
+                        @include transform(translateY(-30%));
+                    }
+                    40% {
+                        @include transform(translateY(-40%));
+                    }
+                    50% {
+                        @include transform(translateY(-50%));
+                    }
+                    60% {
+                        @include transform(translateY(-60%));
+                    }
+                    70% {
+                        @include transform(translateY(-70%));
+                    }
+                    80% {
+                        @include transform(translateY(-80%));
+                    }
+                    90% {
+                        @include transform(translateY(-90%));
+                    }
+                    100% {
+                        @include transform(translateY(-100%));
+                    }
+                }
+            }
+            &-booking {
+                margin: 0;
+            }
+        }
+        @include sm {
+            padding-block: var(--height-header) 32rem;
+            &__top {
+                padding-top: 3rem;
+                margin-left: 1rem;
+                margin-right: 1rem;
+            }
+            &__gallery {
+                position: relative;
+                margin-block: 2rem 3.4rem;
+                padding-bottom: 0;
+                &-slider {
+                    .item {
+                        aspect-ratio: 320/173;
+                    }
+                }
+                &-bottom {
+                    justify-content: flex-start;
+                    gap: 3rem;
+                    padding-left: 0;
+                    padding-right: 0;
+                    .dimensions {
+                        padding: 1.2rem 0 0;
+                    }
+                    .group {
+                        display: none;
+                    }
+                }
+                &-mbuttons {
+                    display: flex;
+                }
+            }
+            &__content {
+                display: flex;
+                flex-direction: column;
+                gap: 2.8rem;
+                border-top: none;
+                padding-left: 1rem;
+                padding-right: 1rem;
+                &-pricing,
+                &-floorplan,
+                &-specs {
+                    padding-block: 0;
+                }
+                &-pricing {
+                    .desc {
+                        padding-block: 1.8rem;
+                    }
+                    .table {
+                        &__row {
+                            padding: 2rem 1rem;
+                            &-cell {
+                                &:not(:last-child) {
+                                    padding-left: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+                &-floorplan {
+                    .floor {
+                        width: 100%;
+                        margin-top: 2.2rem;
+                        font-size: 1.35;
+                        line-height: 2.25;
+                    }
+                }
+                &-specs {
+                    .content {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 2rem;
+                        padding-block: 2.7rem 5rem;
+                    }
+                }
+            }
+        }
+    }
+}

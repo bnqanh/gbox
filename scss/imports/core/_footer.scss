@@ -1,0 +1,194 @@
+.footer {
+    height: 51rem;
+    background-color: $footer-bg;
+    .container {
+        @include transform(translateY(-18.5rem));
+    }
+    &__wrapper {
+        display: flex;
+        @include text(1.2rem, pnr, 3rem, $main-text, uppercase);
+        letter-spacing: 1.6px;
+        padding: 5rem 1rem 5.2rem;
+        border-top: 1px solid $black-cl;
+        a {
+            @include text(1.2rem, pnr, 3rem, $main-text, uppercase);
+            letter-spacing: 1.6px;
+        }
+        &-left,
+        &-right {
+            -webkit-box-flex: 0;
+            -ms-flex: 0 0 50%;
+            flex: 0 0 50%;
+            max-width: 50%;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+        &-left {
+            .list {
+                display: grid;
+                gap: 3rem;
+                &__item {
+                    display: grid;
+                    &.--tel {
+                        display: flex;
+                        gap: 3.6rem;
+                    }
+                }
+            }
+        }
+        &-right {
+            .desc {
+                max-width: 26rem;
+                margin-bottom: 2.6rem;
+            }
+            .form {
+                position: relative;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+                width: 100%;
+                padding-block: 2rem;
+                &__box {
+                    .input,
+                    .textarea {
+                        @include text(1.2rem, pnr, 2rem, $black-cl, none);
+                        width: 100%;
+                        background-color: transparent;
+                        border: none;
+                        outline: none;
+                        resize: none;
+                    }
+                    .label {
+                        text-transform: capitalize;
+                        letter-spacing: 0;
+                    }
+                    &-input {
+                        position: relative;
+                        height: 7rem;
+                        .label,
+                        .input {
+                            position: absolute;
+                            left: 0;
+                        }
+                        .input {
+                            bottom: 0;
+                            border-bottom: 1px solid $black-line;
+                        }
+                        .label {
+                            top: 50%;
+                            @include transform(translateY(-50%));
+                        }
+                    }
+                    &-message {
+                        position: relative;
+                        height: 10.2rem;
+                        .textarea,
+                        .label {
+                            position: absolute;
+                            left: 0;
+                        }
+                        .textarea {
+                            height: 6.1rem;
+                            line-height: 3rem;
+                            bottom: 0;
+                            border-bottom: 1px solid $black-line;
+                            @include customscroll(3px, $footer-bg, $black-line);
+                        }
+                        .label {
+                            top: 33.33%;
+                            @include transform(translateY(-50%));
+                        }
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            top: 67%;
+                            left: 0;
+                            width: 100%;
+                            height: 1px;
+                            background-color: $black-line;
+                            z-index: -1;
+                        }
+                    }
+                }
+                &__submit {
+                    position: absolute;
+                    right: 0;
+                    bottom: 0;
+                    width: 5rem;
+                    height: 2rem;
+                    background-color: $btn-bg;
+                    border: 1px solid $btn-bg;
+                    letter-spacing: 0;
+                    cursor: pointer;
+                    @include mid(true);
+                    @include text(1rem, pnb, 2rem, $white-cl, uppercase);
+                    @include transition($t $cubic);
+                    &:hover {
+                        background-color: $main-bg;
+                        color: $main-text;
+                        border: 1px solid $main-text;
+                        @include transition($t $cubic);
+                    }
+                }
+            }
+        }
+    }
+    &__bottom {
+        position: relative;
+        text-align: center;
+        padding-block: 3.4rem;
+        &-up {
+            position: absolute;
+            top: 0;
+            width: 2rem;
+            height: 2.2rem;
+            overflow: hidden;
+            @include transform(translateY(0));
+            @include transition($t $cubic);
+            img {
+                @include midimg(100%);
+            }
+            &:hover {
+                @include transform(translateY(-40%));
+                @include transition($t $cubic);
+            }
+        }
+        &-content {
+            @include text(1rem, pnr, 3rem, $main-text, uppercase);
+            letter-spacing: 1.6px;
+        }
+    }
+    @include sm {
+        height: 24.5rem;
+        .container {
+            @include transform(translateY(-26rem));
+        }
+        &__wrapper {
+            display: block;
+            padding-bottom: 7.8rem;
+            &-right {
+                display: none !important;
+            }
+            &-left {
+                -webkit-box-flex: initial;
+                -ms-flex: initial;
+                flex: initial;
+                max-width: 100%;
+                padding-left: 0;
+                padding-right: 0;
+                .list {
+                    gap: 0;
+                    text-align: center;
+                    &__item {
+                        &.--tel {
+                            justify-content: center;
+                        }
+                    }
+                }
+            }
+        }
+        &__bottom {
+            padding-block: 3.2rem;
+        }
+    }
+}

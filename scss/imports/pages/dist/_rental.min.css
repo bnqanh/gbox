@@ -1,0 +1,2 @@
+.rentalpage .rental{display:grid;grid-template-columns:26rem calc(100% - 29rem);gap:3rem;padding-block:var(--height-header) 22rem}.rentalpage .rental__studio{width:100%;aspect-ratio:26/64}
+/*# sourceMappingURL=_rental.min.css.map */
