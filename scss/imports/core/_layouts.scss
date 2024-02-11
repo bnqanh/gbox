@@ -20,7 +20,7 @@ body {
     @include text(1.2rem, pnr, 2rem, $main-text, none); // tuỳ chỉnh
     background: $main-bg;
     position: relative;
-
+    @include customscroll(.5rem, $black-line, $yellow);
     .container-fluid {
         width: 100%;
         padding-right: var(--gap);
