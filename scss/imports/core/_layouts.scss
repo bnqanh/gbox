@@ -66,6 +66,7 @@ body {
     .mainwrapper {
         width: 100%;
         margin: auto;
+        overflow: hidden;
         @include visible;
         @include transform(scaleX(1));
         @include transform-origin(right center);
